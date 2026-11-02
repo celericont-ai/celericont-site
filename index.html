@@ -26,8 +26,7 @@
                         gold: {
                             DEFAULT: '#D4AF37',
                             light: '#F3E5AB',
-                            dark: '#AA7C11',
-                            glow: 'rgba(212, 175, 55, 0.4)'
+                            dark: '#AA7C11'
                         },
                         silver: {
                             DEFAULT: '#C0C0C0',
@@ -61,14 +60,6 @@
             box-shadow: 0 0 25px rgba(212, 175, 55, 0.25);
         }
 
-        .text-gold-flat {
-            color: #D4AF37;
-        }
-
-        .text-silver-flat {
-            color: #E0E0E0;
-        }
-
         .btn-gold {
             background: #D4AF37;
             color: #070B19;
@@ -92,22 +83,20 @@
 </head>
 <body class="font-sans bg-navy-texture text-slate-200 antialiased selection:bg-gold selection:text-navy-950">
 
-    <!-- Definition do SVG Único Reutilizável da Logo sem Efeito Metálico -->
+    <!-- Definição Única do Símbolo Geométrico da Logo (Dois C's + Seta do Gráfico) -->
     <svg style="display: none;">
-        <symbol id="celericont-logo-symbol" viewBox="0 0 500 500">
-            <!-- 1. Anel Externo Prata (Superior / Esquerdo) -->
-            <path d="M 230,25 C 105,25 25,120 25,245 C 25,320 60,380 120,430 C 95,385 85,325 100,265 C 115,200 160,135 230,105 C 290,80 355,85 405,115 C 365,60 300,25 230,25 Z" fill="#E0E0E0" />
-            <path d="M 400,75 C 435,100 460,135 470,180 C 450,150 425,125 390,105 Z" fill="#E0E0E0" />
+        <symbol id="celericont-symbol" viewBox="0 0 200 200">
+            <!-- 1. "C" Maior Externo (Prata) -->
+            <path d="M 155 45 A 75 75 0 1 0 155 155" fill="none" stroke="#C0C0C0" stroke-width="20" stroke-linecap="round"/>
             
-            <!-- 2. Anel Interno Dourado (C-Shape Ouro) -->
-            <path d="M 240,90 C 160,90 110,145 110,225 C 110,285 140,325 190,345 C 180,315 180,275 195,240 C 210,205 240,175 285,160 C 315,150 345,155 370,170 C 350,120 300,90 240,90 Z" fill="#D4AF37" />
+            <!-- 2. "C" Menor Interno (Dourado) -->
+            <path d="M 135 65 A 50 50 0 1 0 135 135" fill="none" stroke="#D4AF37" stroke-width="15" stroke-linecap="round"/>
             
-            <!-- 3. Anel Inferior Dourado e Base em Ouro Solido -->
-            <path d="M 40,290 C 100,380 200,430 300,410 C 380,390 440,330 470,250 C 435,320 370,365 290,370 C 200,375 115,335 70,270 Z" fill="#D4AF37" />
-            <path d="M 140,425 C 210,480 310,485 390,445 C 445,415 470,365 475,325 C 455,385 395,435 320,445 C 250,455 180,440 140,425 Z" fill="#E0E0E0" />
-
-            <!-- 4. Seta Central de Crescimento (Evolução Contábil) -->
-            <path d="M 105,370 L 155,340 L 210,380 L 380,160 L 325,175 L 420,125 L 395,225 L 360,175 L 215,350 L 155,305 Z" fill="#E0E0E0" />
+            <!-- 3. Seta do Gráfico de Crescimento (Prata/Branco) ajustada dentro do C menor -->
+            <!-- Linha do Gráfico em Zig-Zag -->
+            <polyline points="75,120 90,110 105,125 130,80" fill="none" stroke="#E0E0E0" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- Cabeça da Seta do Gráfico -->
+            <polygon points="130,80 115,80 130,95" fill="#E0E0E0"/>
         </symbol>
     </svg>
 
@@ -115,11 +104,11 @@
     <header class="fixed top-0 left-0 w-full z-50 bg-navy-950/90 backdrop-blur-md border-b border-gold/20 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
-                <!-- Logotipo com o Símbolo Fidelizado e Sem Brilho Metálico -->
+                <!-- Logotipo -->
                 <a href="#" class="flex items-center space-x-3 group">
                     <div class="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center shrink-0">
                         <svg class="w-full h-full transform group-hover:scale-105 transition-transform duration-300">
-                            <use href="#celericont-logo-symbol" />
+                            <use href="#celericont-symbol"/>
                         </svg>
                     </div>
                     <div class="flex flex-col">
@@ -192,7 +181,7 @@
                     </div>
 
                     <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold tracking-tight leading-tight text-white">
-                        Contabilidade Estratégica & <span class="text-gold-flat">Alta Performance</span>
+                        Contabilidade Estratégica & <span class="text-gold">Alta Performance</span>
                     </h1>
 
                     <p class="text-lg sm:text-xl text-slate-300 max-w-2xl font-light leading-relaxed">
@@ -212,7 +201,7 @@
 
                     <div class="grid grid-cols-3 gap-4 pt-8 border-t border-slate-800">
                         <div>
-                            <div class="text-2xl sm:text-3xl font-serif font-extrabold text-silver-flat">100%</div>
+                            <div class="text-2xl sm:text-3xl font-serif font-extrabold text-slate-200">100%</div>
                             <div class="text-xs text-slate-400 mt-0.5 uppercase tracking-wider">Seguro e Digital</div>
                         </div>
                         <div>
@@ -220,18 +209,18 @@
                             <div class="text-xs text-slate-400 mt-0.5 uppercase tracking-wider">Burocracia</div>
                         </div>
                         <div>
-                            <div class="text-2xl sm:text-3xl font-serif font-extrabold text-silver-flat">SJC / SP</div>
+                            <div class="text-2xl sm:text-3xl font-serif font-extrabold text-slate-200">SJC / SP</div>
                             <div class="text-xs text-slate-400 mt-0.5 uppercase tracking-wider">Sede Própria</div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Hero Emblem com a Logo em Cores Sólidas -->
+                <!-- Hero Card com o Emblem Central Alinhado -->
                 <div class="lg:col-span-5 relative">
                     <div class="glass-card rounded-3xl p-8 relative shadow-2xl border border-gold/30 text-center flex flex-col items-center">
                         <div class="w-48 h-48 mb-6 relative flex items-center justify-center">
-                            <svg class="w-full h-full">
-                                <use href="#celericont-logo-symbol" />
+                            <svg class="w-full h-full drop-shadow-[0_0_15px_rgba(212,175,55,0.3)]">
+                                <use href="#celericont-symbol"/>
                             </svg>
                         </div>
                         
@@ -244,7 +233,7 @@
                                 <span class="text-gold font-bold">Ativo</span>
                             </div>
                             <div class="p-3.5 rounded-xl bg-navy-950/60 border border-gold/20 flex items-center justify-between text-xs">
-                                <span class="text-slate-300 font-medium"><i class="fa-solid fa-shield-halved text-silver-flat mr-2"></i> Compliance Fiscal</span>
+                                <span class="text-slate-300 font-medium"><i class="fa-solid fa-shield-halved text-slate-300 mr-2"></i> Compliance Fiscal</span>
                                 <span class="text-emerald-400 font-bold">100% OK</span>
                             </div>
                         </div>
@@ -686,11 +675,11 @@
     <footer class="bg-navy-950 text-slate-400 py-10 border-t border-gold/20 text-xs">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row items-center justify-between gap-6">
-                <!-- Marca Rodapé com o Símbolo -->
+                <!-- Marca Rodapé -->
                 <div class="flex items-center space-x-3">
                     <div class="w-8 h-8 flex items-center justify-center">
                         <svg class="w-full h-full">
-                            <use href="#celericont-logo-symbol" />
+                            <use href="#celericont-symbol"/>
                         </svg>
                     </div>
                     <span class="text-sm font-serif font-bold text-white uppercase tracking-wider">Celericont Contabilidade</span>
@@ -782,7 +771,7 @@
 
         calculateRegime();
 
-        // Submissão do Formulário de Contato sem recarregar a página (AJAX)
+        // Submissão do Formulário de Contato via AJAX
         const contactForm = document.getElementById('contactForm');
         const formStatus = document.getElementById('formStatus');
         const submitBtn = document.getElementById('submitBtn');
