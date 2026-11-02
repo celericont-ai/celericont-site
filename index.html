@@ -1,99 +1,136 @@
-<!-- SECÇÃO DE CONTACTO E PROPOSTA -->
-<section id="contato" class="py-20 relative bg-navy-950">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-            
-            <!-- Informações de Contacto (Esquerda) -->
-            <div class="lg:col-span-5 space-y-6">
-                <div>
-                    <span class="text-xs font-bold uppercase tracking-widest text-gold mb-2 block">Contacto Direto</span>
-                    <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white">Fale com a Celericont</h2>
-                    <p class="text-slate-300 text-sm mt-3">Nossa equipe técnica está pronta para atender com agilidade e total sigilo.</p>
-                </div>
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celericont | Contabilidade Inteligente & Consultoria Tributária em São José dos Campos - SP</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts Inter & Playfair Display / Cinzel for serif luxury headings -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome 6 CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            800: '#141E30',
+                            900: '#0B132B',
+                            950: '#070B19'
+                        },
+                        gold: {
+                            DEFAULT: '#D4AF37',
+                            light: '#F3E5AB',
+                            dark: '#AA7C11',
+                            glow: 'rgba(212, 175, 55, 0.4)'
+                        },
+                        silver: {
+                            DEFAULT: '#C0C0C0',
+                            light: '#E8E8E8',
+                            dark: '#8A95A5'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Cinzel', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Fundo de textura azul marinho inspirado no logo */
+        .bg-navy-texture {
+            background-color: #0B132B;
+            background-image: radial-gradient(circle at 50% 30%, #1C2541 0%, #0B132B 70%, #050814 100%);
+        }
+        
+        /* Efeito de cartão de vidro luxuoso */
+        .glass-card {
+            background: rgba(28, 37, 65, 0.4);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+        }
 
-                <div class="space-y-4 pt-4">
-                    <div class="flex items-center space-x-4 p-4 rounded-2xl bg-navy-900/60 border border-gold/10">
-                        <div class="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center text-gold text-lg">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div>
-                            <p class="text-xs font-semibold uppercase text-slate-400">E-mail Oficial</p>
-                            <a href="mailto:atendimento@celericont.com.br" class="text-white text-sm font-medium hover:text-gold transition-colors">atendimento@celericont.com.br</a>
-                        </div>
-                    </div>
+        .glass-card-hover:hover {
+            border-color: rgba(212, 175, 55, 0.5);
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.25);
+        }
 
-                    <div class="flex items-center space-x-4 p-4 rounded-2xl bg-navy-900/60 border border-gold/10">
-                        <div class="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center text-gold text-lg">
-                            <i class="fab fa-whatsapp"></i>
-                        </div>
-                        <div>
-                            <p class="text-xs font-semibold uppercase text-slate-400">WhatsApp & Telefone</p>
-                            <a href="https://wa.me/5512992163772" target="_blank" class="text-white text-sm font-medium hover:text-gold transition-colors">(12) 99216-3772</a>
-                        </div>
-                    </div>
+        /* Gradientes Metálicos */
+        .text-gold-metallic {
+            background: linear-gradient(135deg, #FFF099 0%, #D4AF37 50%, #996515 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-                    <div class="flex items-center space-x-4 p-4 rounded-2xl bg-navy-900/60 border border-gold/10">
-                        <div class="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center text-gold text-lg">
-                            <i class="fas fa-location-dot"></i>
-                        </div>
-                        <div>
-                            <p class="text-xs font-semibold uppercase text-slate-400">Localização</p>
-                            <p class="text-white text-sm font-medium">São José dos Campos - SP | Atendimento Nacional</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        .text-silver-metallic {
+            background: linear-gradient(135deg, #FFFFFF 0%, #C0C0C0 50%, #708090 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-            <!-- Formulário de Proposta (Direita) -->
-            <div class="lg:col-span-7">
-                <div class="bg-navy-900/80 backdrop-blur-md rounded-3xl p-6 sm:p-8 border border-gold/30 shadow-2xl">
-                    <h3 class="text-xl font-serif font-bold text-white mb-6">Solicitar Atendimento ou Proposta</h3>
-                    
-                    <form action="https://formspree.io/f/SEU_FORM_ID" method="POST" class="space-y-4">
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <div>
-                                <label class="block text-[10px] font-semibold uppercase text-slate-300 mb-1">Seu Nome</label>
-                                <input type="text" name="nome" required placeholder="Nome completo" class="w-full bg-navy-950 border border-gold/20 rounded-xl px-4 py-3 text-white text-xs focus:outline-none focus:border-gold">
-                            </div>
-                            <div>
-                                <label class="block text-[10px] font-semibold uppercase text-slate-300 mb-1">Empresa</label>
-                                <input type="text" name="empresa" placeholder="Nome do negócio" class="w-full bg-navy-950 border border-gold/20 rounded-xl px-4 py-3 text-white text-xs focus:outline-none focus:border-gold">
-                            </div>
-                        </div>
+        .btn-gold {
+            background: linear-gradient(135deg, #D4AF37 0%, #AA7C11 100%);
+            color: #070B19;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+        }
 
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <div>
-                                <label class="block text-[10px] font-semibold uppercase text-slate-300 mb-1">E-mail</label>
-                                <input type="email" name="email" required placeholder="seuemail@empresa.com" class="w-full bg-navy-950 border border-gold/20 rounded-xl px-4 py-3 text-white text-xs focus:outline-none focus:border-gold">
-                            </div>
-                            <div>
-                                <label class="block text-[10px] font-semibold uppercase text-slate-300 mb-1">WhatsApp</label>
-                                <input type="tel" name="whatsapp" required placeholder="(12) 99999-9999" class="w-full bg-navy-950 border border-gold/20 rounded-xl px-4 py-3 text-white text-xs focus:outline-none focus:border-gold">
-                            </div>
-                        </div>
+        .btn-gold:hover {
+            background: linear-gradient(135deg, #F3E5AB 0%, #D4AF37 100%);
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.6);
+        }
 
-                        <div>
-                            <label class="block text-[10px] font-semibold uppercase text-slate-300 mb-1">Assunto</label>
-                            <select name="assunto" class="w-full bg-navy-950 border border-gold/20 rounded-xl px-4 py-3 text-white text-xs focus:outline-none focus:border-gold">
-                                <option value="Abertura de Empresa">Abertura de Empresa</option>
-                                <option value="Troca de Contabilidade">Troca de Contabilidade</option>
-                                <option value="Planejamento Tributário">Planejamento Tributário</option>
-                                <option value="Outros Serviços">Outros Serviços</option>
-                            </select>
-                        </div>
+        .btn-silver {
+            background: linear-gradient(135deg, #E0E0E0 0%, #999999 100%);
+            color: #070B19;
+        }
 
-                        <div>
-                            <label class="block text-[10px] font-semibold uppercase text-slate-300 mb-1">Mensagem</label>
-                            <textarea name="mensagem" rows="3" placeholder="Descreva brevemente sua necessidade..." class="w-full bg-navy-950 border border-gold/20 rounded-xl px-4 py-3 text-white text-xs focus:outline-none focus:border-gold"></textarea>
-                        </div>
+        .btn-silver:hover {
+            background: linear-gradient(135deg, #F3E5AB 0%, #D4AF37 100%);
+        }
+    </style>
+</head>
+<body class="font-sans bg-navy-texture text-slate-200 antialiased selection:bg-gold selection:text-navy-950">
 
-                        <button type="submit" class="w-full bg-gradient-to-r from-yellow-500 to-amber-600 hover:from-yellow-400 hover:to-amber-500 text-navy-950 font-bold py-3.5 px-6 rounded-xl transition-all duration-300 shadow-lg text-xs uppercase tracking-wider">
-                            Enviar Solicitação
-                        </button>
-                    </form>
-                </div>
-            </div>
+    <!-- 1. Cabeçalho Fixo com Navegação -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-navy-950/90 backdrop-blur-md border-b border-gold/20 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo Oficial em SVG Fiel à Imagem -->
+                <a href="#" class="flex items-center space-x-3 group">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center shrink-0">
+                        <svg viewBox="0 0 120 120" class="w-full h-full drop-shadow-[0_0_10px_rgba(212,175,55,0.3)] transform group-hover:scale-105 transition-transform duration-300">
+                            <defs>
+                                <!-- Gradiente Ouro Metálico -->
+                                <linearGradient id="goldMetallic" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#FFF3B0" />
+                                    <stop offset="30%" stop-color="#E5C158" />
+                                    <stop offset="70%" stop-color="#B8860B" />
+                                    <stop offset="100%" stop-color="#7A5200" />
+                                </linearGradient>
+                                <!-- Gradiente Prata Metálico -->
+                                <linearGradient id="silverMetallic" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#FFFFFF" />
+                                    <stop offset="40%" stop-color="#DCDCDC" />
+                                    <stop offset="75%" stop-color="#909090" />
+                                    <stop offset="100%" stop-color="#505560" />
+                                </linearGradient>
+                                <!-- Efeito de Brilho / Sombra Interna -->
+                                <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                                    <feGaussianBlur stdDeviation="2" result="blur" />
+                                    <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                                </filter>
+                            </defs>
 
-        </div>
-    </div>
-</section>
+                            <!-- Arco Superior Externo (Prata Escovado com Textura de Pincel) -->
+                            <path d="M 60,12 A 48,48 0 1,1 18,72 C 22,64 30,55 40,58 C 28,70 32,92 58,96 C 84,100 102,78 100,52 C 98,28 78,14 60,12 Z" fill="url(#silverMetallic)" />
+                            
+                            <!-- Detalhes da Textura Pincelada do Arco Prata (Linhas Finas) -->
+                            <path d="M 65,16 A 44,44 0 0,1 100,48" stroke="#FFFFFF" stroke-width="1
