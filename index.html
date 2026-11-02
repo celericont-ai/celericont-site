@@ -664,21 +664,34 @@
                 </div>
 
                 <!-- Formulário de Proposta -->
-                <div class="lg:col-span-7">
-                    <div class="glass-card rounded-3xl p-6 sm:p-10 border border-gold/30">
-                        <h3 class="text-xl font-serif font-bold text-white mb-6">Solicitar Atendimento ou Proposta</h3>
-                        
-                        <form id="contactForm" class="space-y-4">
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <div>
-                                    <label class="block text-[10px] font-semibold uppercase text-slate-300 mb-1">Seu Nome</label>
-                                    <input type="text" required placeholder="Nome completo" class="w-full bg-navy-900 border border-gold/20 rounded-xl px-4 py-3 text-white text-xs focus:outline-none focus:border-gold">
-                                </div>
-                                <div>
-                                    <label class="block text-[10px] font-semibold uppercase text-slate-300 mb-1">Empresa</label>
-                                    <input type="text" placeholder="Nome do negócio" class="w-full bg-navy-900 border border-gold/20 rounded-xl px-4 py-3 text-white text-xs focus:outline-none focus:border-gold">
-                                </div>
-                            </div>
+                <form action="https://formspree.io/f/SEU_ID_FORMSPREE" method="POST" class="space-y-4">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div>
+            <label class="block text-[10px] font-semibold uppercase text-slate-300 mb-1">Seu Nome</label>
+            <input type="text" name="nome" required placeholder="Nome completo" class="w-full bg-navy-900 border border-gold/20 rounded-xl px-4 py-3 text-white text-xs focus:outline-none focus:border-gold">
+        </div>
+        <div>
+            <label class="block text-[10px] font-semibold uppercase text-slate-300 mb-1">Empresa</label>
+            <input type="text" name="empresa" placeholder="Nome do negócio" class="w-full bg-navy-900 border border-gold/20 rounded-xl px-4 py-3 text-white text-xs focus:outline-none focus:border-gold">
+        </div>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div>
+            <label class="block text-[10px] font-semibold uppercase text-slate-300 mb-1">E-mail</label>
+            <input type="email" name="email" required placeholder="seuemail@empresa.com" class="w-full bg-navy-900 border border-gold/20 rounded-xl px-4 py-3 text-white text-xs focus:outline-none focus:border-gold">
+        </div>
+        <div>
+            <label class="block text-[10px] font-semibold uppercase text-slate-300 mb-1">WhatsApp</label>
+            <input type="tel" name="whatsapp" required placeholder="(12) 99999-9999" class="w-full bg-navy-900 border border-gold/20 rounded-xl px-4 py-3 text-white text-xs focus:outline-none focus:border-gold">
+        </div>
+    </div>
+    
+    <button type="submit" class="w-full bg-gold text-navy-950 font-bold py-3 rounded-xl hover:bg-gold-light transition-all">
+        Enviar Solicitação
+    </button>
+</form>
+     </div>
 
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <div>
