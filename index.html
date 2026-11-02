@@ -44,13 +44,11 @@
         }
     </script>
     <style>
-        /* Fundo de textura azul marinho inspirado no logo */
         .bg-navy-texture {
             background-color: #0B132B;
             background-image: radial-gradient(circle at 50% 30%, #1C2541 0%, #0B132B 70%, #050814 100%);
         }
         
-        /* Efeito de cartão de vidro luxuoso */
         .glass-card {
             background: rgba(28, 37, 65, 0.4);
             backdrop-filter: blur(16px);
@@ -63,7 +61,6 @@
             box-shadow: 0 0 25px rgba(212, 175, 55, 0.25);
         }
 
-        /* Gradientes Metálicos */
         .text-gold-metallic {
             background: linear-gradient(135deg, #FFF099 0%, #D4AF37 50%, #996515 100%);
             -webkit-background-clip: text;
@@ -99,43 +96,15 @@
 </head>
 <body class="font-sans bg-navy-texture text-slate-200 antialiased selection:bg-gold selection:text-navy-950">
 
-    <!-- Definição dos gradientes SVG para o logotipo -->
-    <svg style="display: none;">
-        <defs>
-            <linearGradient id="goldMetallic" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#FFF3B0" />
-                <stop offset="30%" stop-color="#E5C158" />
-                <stop offset="70%" stop-color="#B8860B" />
-                <stop offset="100%" stop-color="#7A5200" />
-            </linearGradient>
-            <linearGradient id="silverMetallic" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#FFFFFF" />
-                <stop offset="40%" stop-color="#DCDCDC" />
-                <stop offset="75%" stop-color="#909090" />
-                <stop offset="100%" stop-color="#505560" />
-            </linearGradient>
-            <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-                <feGaussianBlur stdDeviation="2" result="blur" />
-                <feComposite in="SourceGraphic" in2="blur" operator="over" />
-            </filter>
-        </defs>
-    </svg>
-
-    <!-- 1. Cabeçalho Fixo com Navegação -->
+    <!-- 1. Cabeçalho Fixo com o seu Símbolo Real -->
     <header class="fixed top-0 left-0 w-full z-50 bg-navy-950/90 backdrop-blur-md border-b border-gold/20 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
-                <!-- Logo -->
+                <!-- Logotipo com a sua imagem real -->
                 <a href="#" class="flex items-center space-x-3 group">
-                    <div class="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center shrink-0">
-                        <svg viewBox="0 0 120 120" class="w-full h-full drop-shadow-[0_0_10px_rgba(212,175,55,0.3)] transform group-hover:scale-105 transition-transform duration-300">
-                            <path d="M 60,12 A 48,48 0 1,1 18,72 C 22,64 30,55 40,58 C 28,70 32,92 58,96 C 84,100 102,78 100,52 C 98,28 78,14 60,12 Z" fill="url(#silverMetallic)" />
-                            <path d="M 65,16 A 44,44 0 0,1 100,48" stroke="#FFFFFF" stroke-width="1.5" fill="none" opacity="0.6" stroke-linecap="round"/>
-                            <path d="M 22,70 A 44,44 0 0,0 52,102" stroke="#404550" stroke-width="1.5" fill="none" opacity="0.5" stroke-linecap="round"/>
-                            <path d="M 58,28 A 32,32 0 1,0 94,64 C 92,54 86,46 80,48 C 86,58 84,76 68,82 C 50,88 36,72 38,54 C 40,38 52,30 58,28 Z" fill="url(#goldMetallic)" />
-                            <path d="M 76,28 C 95,40 106,60 98,80 C 92,95 72,106 52,104 C 70,102 90,88 94,68 C 96,52 86,36 76,28 Z" fill="url(#goldMetallic)" />
-                            <path d="M 38,80 L 44,72 L 56,76 L 74,42 L 64,44 L 84,34 L 80,54 L 74,45 L 56,82 L 44,77 Z" fill="url(#silverMetallic)" filter="url(#glow)" />
-                        </svg>
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center shrink-0 overflow-hidden rounded-full border border-gold/40 shadow-[0_0_10px_rgba(212,175,55,0.3)]">
+                        <!-- Substitua 'logo-simbolo.png' pelo nome exato do arquivo de imagem do seu símbolo -->
+                        <img src="logo-simbolo.png" alt="Celericont Símbolo" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300">
                     </div>
                     <div class="flex flex-col">
                         <span class="text-xl sm:text-2xl font-serif font-extrabold tracking-wider text-silver-metallic uppercase">CELERICONT</span>
@@ -241,18 +210,11 @@
                     </div>
                 </div>
 
-                <!-- Hero Graphic Emblem Display -->
+                <!-- Hero Graphic Emblem Display com a sua imagem real -->
                 <div class="lg:col-span-5 relative">
                     <div class="glass-card rounded-3xl p-8 relative shadow-2xl border border-gold/30 text-center flex flex-col items-center">
-                        <div class="w-40 h-40 mb-6 relative">
-                            <svg viewBox="0 0 120 120" class="w-full h-full drop-shadow-[0_0_20px_rgba(212,175,55,0.4)]">
-                                <path d="M 60,12 A 48,48 0 1,1 18,72 C 22,64 30,55 40,58 C 28,70 32,92 58,96 C 84,100 102,78 100,52 C 98,28 78,14 60,12 Z" fill="url(#silverMetallic)" />
-                                <path d="M 65,16 A 44,44 0 0,1 100,48" stroke="#FFFFFF" stroke-width="1.5" fill="none" opacity="0.6"/>
-                                <path d="M 22,70 A 44,44 0 0,0 52,102" stroke="#404550" stroke-width="1.5" fill="none" opacity="0.5"/>
-                                <path d="M 58,28 A 32,32 0 1,0 94,64 C 92,54 86,46 80,48 C 86,58 84,76 68,82 C 50,88 36,72 38,54 C 40,38 52,30 58,28 Z" fill="url(#goldMetallic)" />
-                                <path d="M 76,28 C 95,40 106,60 98,80 C 92,95 72,106 52,104 C 70,102 90,88 94,68 C 96,52 86,36 76,28 Z" fill="url(#goldMetallic)" />
-                                <path d="M 38,80 L 44,72 L 56,76 L 74,42 L 64,44 L 84,34 L 80,54 L 74,45 L 56,82 L 44,77 Z" fill="url(#silverMetallic)" />
-                            </svg>
+                        <div class="w-44 h-44 mb-6 relative rounded-2xl overflow-hidden border border-gold/30 shadow-[0_0_20px_rgba(212,175,55,0.4)]">
+                            <img src="logo-simbolo.png" alt="Celericont Logo Símbolo" class="w-full h-full object-cover">
                         </div>
                         
                         <h3 class="text-2xl font-serif font-bold text-silver-metallic uppercase">CELERICONT</h3>
@@ -693,7 +655,7 @@
 
                         <!-- Mensagem de confirmação que aparece sem sair do site -->
                         <div id="formStatus" class="hidden mt-4 p-4 rounded-xl bg-gold/10 border border-gold/30 text-gold text-xs text-center font-semibold">
-                            Mensagem enviada com sucesso! Em breve entraremos em contato.
+                            Mensagem enviada com sucesso! Em breve entraremos em contacto.
                         </div>
                     </div>
                 </div>
@@ -706,14 +668,10 @@
     <footer class="bg-navy-950 text-slate-400 py-10 border-t border-gold/20 text-xs">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row items-center justify-between gap-6">
-                <!-- Marca Rodapé -->
+                <!-- Marca Rodapé com o Símbolo -->
                 <div class="flex items-center space-x-3">
-                    <div class="w-8 h-8">
-                        <svg viewBox="0 0 120 120" class="w-full h-full">
-                            <path d="M 60,12 A 48,48 0 1,1 18,72 C 22,64 30,55 40,58 C 28,70 32,92 58,96 C 84,100 102,78 100,52 C 98,28 78,14 60,12 Z" fill="url(#silverMetallic)" />
-                            <path d="M 58,28 A 32,32 0 1,0 94,64 C 92,54 86,46 80,48 C 86,58 84,76 68,82 C 50,88 36,72 38,54 C 40,38 52,30 58,28 Z" fill="url(#goldMetallic)" />
-                            <path d="M 38,80 L 44,72 L 56,76 L 74,42 L 64,44 L 84,34 L 80,54 L 74,45 L 56,82 L 44,77 Z" fill="url(#silverMetallic)" />
-                        </svg>
+                    <div class="w-8 h-8 rounded-full overflow-hidden border border-gold/30">
+                        <img src="logo-simbolo.png" alt="Celericont" class="w-full h-full object-cover">
                     </div>
                     <span class="text-sm font-serif font-bold text-white uppercase tracking-wider">Celericont Contabilidade</span>
                 </div>
