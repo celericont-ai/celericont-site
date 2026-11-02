@@ -61,55 +61,69 @@
             box-shadow: 0 0 25px rgba(212, 175, 55, 0.25);
         }
 
-        .text-gold-metallic {
-            background: linear-gradient(135deg, #FFF099 0%, #D4AF37 50%, #996515 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .text-gold-flat {
+            color: #D4AF37;
         }
 
-        .text-silver-metallic {
-            background: linear-gradient(135deg, #FFFFFF 0%, #C0C0C0 50%, #708090 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .text-silver-flat {
+            color: #E0E0E0;
         }
 
         .btn-gold {
-            background: linear-gradient(135deg, #D4AF37 0%, #AA7C11 100%);
+            background: #D4AF37;
             color: #070B19;
             box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
         }
 
         .btn-gold:hover {
-            background: linear-gradient(135deg, #F3E5AB 0%, #D4AF37 100%);
+            background: #F3E5AB;
             box-shadow: 0 0 25px rgba(212, 175, 55, 0.6);
         }
 
         .btn-silver {
-            background: linear-gradient(135deg, #E0E0E0 0%, #999999 100%);
+            background: #E0E0E0;
             color: #070B19;
         }
 
         .btn-silver:hover {
-            background: linear-gradient(135deg, #F3E5AB 0%, #D4AF37 100%);
+            background: #D4AF37;
         }
     </style>
 </head>
 <body class="font-sans bg-navy-texture text-slate-200 antialiased selection:bg-gold selection:text-navy-950">
 
-    <!-- 1. Cabeçalho Fixo com o Símbolo Vetorial Otimizado -->
+    <!-- Definition do SVG Único Reutilizável da Logo sem Efeito Metálico -->
+    <svg style="display: none;">
+        <symbol id="celericont-logo-symbol" viewBox="0 0 500 500">
+            <!-- 1. Anel Externo Prata (Superior / Esquerdo) -->
+            <path d="M 230,25 C 105,25 25,120 25,245 C 25,320 60,380 120,430 C 95,385 85,325 100,265 C 115,200 160,135 230,105 C 290,80 355,85 405,115 C 365,60 300,25 230,25 Z" fill="#E0E0E0" />
+            <path d="M 400,75 C 435,100 460,135 470,180 C 450,150 425,125 390,105 Z" fill="#E0E0E0" />
+            
+            <!-- 2. Anel Interno Dourado (C-Shape Ouro) -->
+            <path d="M 240,90 C 160,90 110,145 110,225 C 110,285 140,325 190,345 C 180,315 180,275 195,240 C 210,205 240,175 285,160 C 315,150 345,155 370,170 C 350,120 300,90 240,90 Z" fill="#D4AF37" />
+            
+            <!-- 3. Anel Inferior Dourado e Base em Ouro Solido -->
+            <path d="M 40,290 C 100,380 200,430 300,410 C 380,390 440,330 470,250 C 435,320 370,365 290,370 C 200,375 115,335 70,270 Z" fill="#D4AF37" />
+            <path d="M 140,425 C 210,480 310,485 390,445 C 445,415 470,365 475,325 C 455,385 395,435 320,445 C 250,455 180,440 140,425 Z" fill="#E0E0E0" />
+
+            <!-- 4. Seta Central de Crescimento (Evolução Contábil) -->
+            <path d="M 105,370 L 155,340 L 210,380 L 380,160 L 325,175 L 420,125 L 395,225 L 360,175 L 215,350 L 155,305 Z" fill="#E0E0E0" />
+        </symbol>
+    </svg>
+
+    <!-- 1. Cabeçalho Fixo -->
     <header class="fixed top-0 left-0 w-full z-50 bg-navy-950/90 backdrop-blur-md border-b border-gold/20 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
-                <!-- Logotipo com Símbolo -->
+                <!-- Logotipo com o Símbolo Fidelizado e Sem Brilho Metálico -->
                 <a href="#" class="flex items-center space-x-3 group">
                     <div class="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center shrink-0">
-                        <svg viewBox="0 0 400 400" class="w-full h-full text-gold group-hover:text-white transition-colors drop-shadow-[0_0_10px_rgba(212,175,55,0.4)]" fill="none" stroke="currentColor" stroke-width="20" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="200" cy="200" r="170" stroke-width="18" stroke="#D4AF37"/>
-                            <path d="M 120 280 L 190 200 L 140 180 L 280 120 L 260 170 L 210 160 Z" fill="#D4AF37" />
+                        <svg class="w-full h-full transform group-hover:scale-105 transition-transform duration-300">
+                            <use href="#celericont-logo-symbol" />
                         </svg>
                     </div>
                     <div class="flex flex-col">
-                        <span class="text-xl sm:text-2xl font-serif font-extrabold tracking-wider text-silver-metallic uppercase">CELERICONT</span>
+                        <span class="text-xl sm:text-2xl font-serif font-extrabold tracking-wider text-slate-100 uppercase">CELERICONT</span>
                         <span class="text-[8px] sm:text-[9px] uppercase tracking-[0.25em] text-gold font-semibold -mt-1">Contabilidade Consultiva</span>
                     </div>
                 </a>
@@ -178,7 +192,7 @@
                     </div>
 
                     <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold tracking-tight leading-tight text-white">
-                        Contabilidade Estratégica & <span class="text-gold-metallic">Alta Performance</span>
+                        Contabilidade Estratégica & <span class="text-gold-flat">Alta Performance</span>
                     </h1>
 
                     <p class="text-lg sm:text-xl text-slate-300 max-w-2xl font-light leading-relaxed">
@@ -198,7 +212,7 @@
 
                     <div class="grid grid-cols-3 gap-4 pt-8 border-t border-slate-800">
                         <div>
-                            <div class="text-2xl sm:text-3xl font-serif font-extrabold text-silver-metallic">100%</div>
+                            <div class="text-2xl sm:text-3xl font-serif font-extrabold text-silver-flat">100%</div>
                             <div class="text-xs text-slate-400 mt-0.5 uppercase tracking-wider">Seguro e Digital</div>
                         </div>
                         <div>
@@ -206,23 +220,22 @@
                             <div class="text-xs text-slate-400 mt-0.5 uppercase tracking-wider">Burocracia</div>
                         </div>
                         <div>
-                            <div class="text-2xl sm:text-3xl font-serif font-extrabold text-silver-metallic">SJC / SP</div>
+                            <div class="text-2xl sm:text-3xl font-serif font-extrabold text-silver-flat">SJC / SP</div>
                             <div class="text-xs text-slate-400 mt-0.5 uppercase tracking-wider">Sede Própria</div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Hero Graphic Emblem Display -->
+                <!-- Hero Emblem com a Logo em Cores Sólidas -->
                 <div class="lg:col-span-5 relative">
                     <div class="glass-card rounded-3xl p-8 relative shadow-2xl border border-gold/30 text-center flex flex-col items-center">
-                        <div class="w-40 h-40 mb-6 relative flex items-center justify-center">
-                            <svg viewBox="0 0 400 400" class="w-full h-full text-gold filter drop-shadow-[0_0_20px_rgba(212,175,55,0.4)]" fill="none" stroke="currentColor" stroke-width="20" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="200" cy="200" r="170" stroke-width="18" stroke="#D4AF37"/>
-                                <path d="M 120 280 L 190 200 L 140 180 L 280 120 L 260 170 L 210 160 Z" fill="#D4AF37" />
+                        <div class="w-48 h-48 mb-6 relative flex items-center justify-center">
+                            <svg class="w-full h-full">
+                                <use href="#celericont-logo-symbol" />
                             </svg>
                         </div>
                         
-                        <h3 class="text-2xl font-serif font-bold text-silver-metallic uppercase">CELERICONT</h3>
+                        <h3 class="text-2xl font-serif font-bold text-slate-100 uppercase">CELERICONT</h3>
                         <p class="text-xs text-gold uppercase tracking-[0.2em] font-semibold mt-1 mb-6">Gestão Tributária & Societária</p>
 
                         <div class="w-full space-y-3 text-left">
@@ -231,7 +244,7 @@
                                 <span class="text-gold font-bold">Ativo</span>
                             </div>
                             <div class="p-3.5 rounded-xl bg-navy-950/60 border border-gold/20 flex items-center justify-between text-xs">
-                                <span class="text-slate-300 font-medium"><i class="fa-solid fa-shield-halved text-silver-metallic mr-2"></i> Compliance Fiscal</span>
+                                <span class="text-slate-300 font-medium"><i class="fa-solid fa-shield-halved text-silver-flat mr-2"></i> Compliance Fiscal</span>
                                 <span class="text-emerald-400 font-bold">100% OK</span>
                             </div>
                         </div>
@@ -280,17 +293,17 @@
                         
                         <div class="space-y-4">
                             <div class="p-4 rounded-xl bg-navy-950/80 border border-gold/20">
-                                <h4 class="font-bold text-silver-metallic text-sm mb-1">Atendimento Personalizado</h4>
+                                <h4 class="font-bold text-slate-200 text-sm mb-1">Atendimento Personalizado</h4>
                                 <p class="text-xs text-slate-300">Acompanhamento direto por especialistas contábeis e fiscais dedicados.</p>
                             </div>
 
                             <div class="p-4 rounded-xl bg-navy-950/80 border border-gold/20">
-                                <h4 class="font-bold text-silver-metallic text-sm mb-1">Auditoria Preventiva</h4>
+                                <h4 class="font-bold text-slate-200 text-sm mb-1">Auditoria Preventiva</h4>
                                 <p class="text-xs text-slate-300">Monitoramento contínuo das declarações para mitigar qualquer risco com o fisco.</p>
                             </div>
 
                             <div class="p-4 rounded-xl bg-navy-950/80 border border-gold/20">
-                                <h4 class="font-bold text-silver-metallic text-sm mb-1">Tecnologia & Inovação</h4>
+                                <h4 class="font-bold text-slate-200 text-sm mb-1">Tecnologia & Inovação</h4>
                                 <p class="text-xs text-slate-300">Processos 100% digitais e integrados para facilidade do empresário.</p>
                             </div>
                         </div>
@@ -355,13 +368,13 @@
                     </div>
                 </div>
 
-                <!-- 4. Consultorias Corporativa -->
+                <!-- 4. Consultorias Corporativas -->
                 <div class="glass-card glass-card-hover rounded-2xl p-8 transition-all duration-300 flex flex-col justify-between group border border-gold/20">
                     <div>
                         <div class="w-12 h-12 rounded-xl bg-gold/10 text-gold flex items-center justify-center mb-6 text-xl group-hover:bg-gold group-hover:text-navy-950 transition-colors">
                             <i class="fa-solid fa-chart-line"></i>
                         </div>
-                        <h3 class="text-xl font-serif font-bold text-white mb-3">Consultorias Corporativa</h3>
+                        <h3 class="text-xl font-serif font-bold text-white mb-3">Consultorias Corporativas</h3>
                         <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
                             Análises e estratégias para crescimento sustentável[cite: 5].
                         </p>
@@ -437,9 +450,9 @@
 
                         <div>
                             <label for="despesasFolha" class="block text-xs font-semibold uppercase text-slate-300 mb-2">
-                                Despesas com Folha / Pró-Labore: <span id="folhaValDisplay" class="text-silver-metallic font-bold">R$ 15.000</span>
+                                Despesas com Folha / Pró-Labore: <span id="folhaValDisplay" class="text-slate-200 font-bold">R$ 15.000</span>
                             </label>
-                            <input type="range" id="despesasFolha" min="0" max="300000" step="2000" value="15000" class="w-full accent-silver cursor-pointer">
+                            <input type="range" id="despesasFolha" min="0" max="300000" step="2000" value="15000" class="w-full accent-slate-300 cursor-pointer">
                             <div class="flex justify-between text-[10px] text-slate-400 mt-1">
                                 <span>R$ 0</span>
                                 <span>R$ 150 mil</span>
@@ -516,7 +529,7 @@
                 <!-- Card 2 -->
                 <div class="glass-card glass-card-hover rounded-2xl overflow-hidden transition-all flex flex-col justify-between">
                     <div class="p-6">
-                        <div class="inline-block px-3 py-1 rounded-full bg-silver/10 text-silver-metallic font-bold text-[10px] mb-3 uppercase tracking-wider border border-silver/30">Guia Especial</div>
+                        <div class="inline-block px-3 py-1 rounded-full bg-slate-800 text-slate-200 font-bold text-[10px] mb-3 uppercase tracking-wider border border-slate-700">Guia Especial</div>
                         <h3 class="text-lg font-serif font-bold text-white mb-2">Reforma Tributária e os Impactos em SJC</h3>
                         <p class="text-slate-400 text-xs leading-relaxed mb-4">
                             Análise preventiva sobre a transição para CBS/IBS e como proteger suas margens operacionais.
@@ -608,7 +621,7 @@
                     </div>
                 </div>
 
-                <!-- Formulário de Proposta (Configurado com https://formspree.io/f/mgaapryl)[cite: 5] -->
+                <!-- Formulário de Proposta (Formspree) -->
                 <div class="lg:col-span-7">
                     <div class="glass-card rounded-3xl p-6 sm:p-10 border border-gold/30">
                         <h3 class="text-xl font-serif font-bold text-white mb-6">Solicitar Atendimento ou Proposta</h3>
@@ -676,9 +689,8 @@
                 <!-- Marca Rodapé com o Símbolo -->
                 <div class="flex items-center space-x-3">
                     <div class="w-8 h-8 flex items-center justify-center">
-                        <svg viewBox="0 0 400 400" class="w-full h-full text-gold" fill="none" stroke="currentColor" stroke-width="20" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="200" cy="200" r="170" stroke-width="18" stroke="#D4AF37"/>
-                            <path d="M 120 280 L 190 200 L 140 180 L 280 120 L 260 170 L 210 160 Z" fill="#D4AF37" />
+                        <svg class="w-full h-full">
+                            <use href="#celericont-logo-symbol" />
                         </svg>
                     </div>
                     <span class="text-sm font-serif font-bold text-white uppercase tracking-wider">Celericont Contabilidade</span>
