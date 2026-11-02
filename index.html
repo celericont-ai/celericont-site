@@ -334,7 +334,7 @@
         </div>
     </section>
 
-    <!-- 4. Serviços Contábeis Especializados (Atualizados exatamente com os 6 itens da imagem) -->
+    <!-- 4. Serviços Contábeis Especializados -->
     <section id="servicos" class="py-20 md:py-28 relative border-t border-gold/10 bg-navy-950/60">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
@@ -641,7 +641,7 @@
                     </div>
                 </div>
 
-                <!-- Formulário de Proposta (Configurado com https://formspree.io/f/mgaapryl) -->
+                <!-- Formulário de Proposta (Envio em segundo plano via Fetch / AJAX) -->
                 <div class="lg:col-span-7">
                     <div class="glass-card rounded-3xl p-6 sm:p-10 border border-gold/30">
                         <h3 class="text-xl font-serif font-bold text-white mb-6">Solicitar Atendimento ou Proposta</h3>
@@ -686,10 +686,15 @@
                                 <textarea name="mensagem" rows="4" placeholder="Descreva brevemente sua necessidade..." class="w-full bg-navy-900 border border-gold/20 rounded-xl px-4 py-3 text-white text-xs focus:outline-none focus:border-gold"></textarea>
                             </div>
 
-                            <button type="submit" class="w-full py-4 rounded-xl font-bold uppercase tracking-wider text-xs btn-gold transition-colors">
+                            <button type="submit" id="submitBtn" class="w-full py-4 rounded-xl font-bold uppercase tracking-wider text-xs btn-gold transition-colors">
                                 Enviar Solicitação
                             </button>
                         </form>
+
+                        <!-- Mensagem de confirmação que aparece sem sair do site -->
+                        <div id="formStatus" class="hidden mt-4 p-4 rounded-xl bg-gold/10 border border-gold/30 text-gold text-xs text-center font-semibold">
+                            Mensagem enviada com sucesso! Em breve entraremos em contato.
+                        </div>
                     </div>
                 </div>
 
@@ -745,6 +750,7 @@
             });
         });
 
+        // Lógica da Calculadora Tributária
         const fatInput = document.getElementById('faturamentoMensal');
         const folhaInput = document.getElementById('despesasFolha');
         const tipoInput = document.getElementById('tipoEmpresa');
@@ -797,6 +803,46 @@
         tipoInput.addEventListener('change', calculateRegime);
 
         calculateRegime();
+
+        // Submissão do Formulário de Contacto sem recarregar a página (AJAX)
+        const contactForm = document.getElementById('contactForm');
+        const formStatus = document.getElementById('formStatus');
+        const submitBtn = document.getElementById('submitBtn');
+
+        contactForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = "A enviar...";
+            submitBtn.disabled = true;
+
+            const formData = new FormData(contactForm);
+
+            try {
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    formStatus.classList.remove('hidden');
+                    contactForm.reset();
+                    setTimeout(() => {
+                        formStatus.classList.add('hidden');
+                    }, 6000);
+                } else {
+                    alert("Ocorreu um erro ao enviar. Por favor, tente novamente ou entre em contacto via WhatsApp.");
+                }
+            } catch (error) {
+                alert("Erro de ligação. Verifique a sua internet e tente novamente.");
+            } finally {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }
+        });
     </script>
 </body>
 </html>
