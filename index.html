@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celericont | Contabilidade Inteligente & Consultoria Tributária em São José dos Campos - SP</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts Inter & Playfair Display / Cinzel for serif luxury headings -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome 6 CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            800: '#141E30',
+                            900: '#0B132B',
+                            950: '#070B19'
+                        },
+                        gold: {
+                            DEFAULT: '#D4AF37',
+                            light: '#F3E5AB',
+                            dark: '#AA7C11',
+                            glow: 'rgba(212, 175, 55, 0.4)'
+                        },
+                        silver: {
+                            DEFAULT: '#C0C0C0',
+                            light: '#E8E8E8',
+                            dark: '#8A95A5'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Cinzel', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Fundo de textura azul marinho inspirado no logo */
+        .bg-navy-texture {
+            background-color: #0B132B;
+            background-image: radial-gradient(circle at 50% 30%, #1C2541 0%, #0B132B 70%, #050814 100%);
+        }
+        
+        /* Efeito de cartão de vidro luxuoso */
+        .glass-card {
+            background: rgba(28, 37, 65, 0.4);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+        }
+
+        .glass-card-hover:hover {
+            border-color: rgba(212, 175, 55, 0.5);
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.25);
+        }
+
+        /* Gradientes Metálicos */
+        .text-gold-metallic {
+            background: linear-gradient(135deg, #FFF099 0%, #D4AF37 50%, #996515 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .text-silver-metallic {
+            background: linear-gradient(135deg, #FFFFFF 0%, #C0C0C0 50%, #708090 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, #D4AF37 0%, #AA7C11 100%);
+            color: #070B19;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-gold:hover {
+            background: linear-gradient(135deg, #F3E5AB 0%, #D4AF37 100%);
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.6);
+        }
+
+        .btn-silver {
+            background: linear-gradient(135deg, #E0E0E0 0%, #999999 100%);
+            color: #070B19;
+        }
+
+        .btn-silver:hover {
+            background: linear-gradient(135deg, #F3E5AB 0%, #D4AF37 100%);
+        }
+    </style>
+</head>
+<body class="font-sans bg-navy-texture text-slate-200 antialiased selection:bg-gold selection:text-navy-950">
+
+    <!-- 1. Cabeçalho Fixo com Navegação -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-navy-950/90 backdrop-blur-md border-b border-gold/20 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo Oficial em SVG Fiel à Imagem -->
+                <a href="#" class="flex items-center space-x-3 group">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center shrink-0">
+                        <svg viewBox="0 0 120 120" class="w-full h-full drop-shadow-[0_0_10px_rgba(212,175,55,0.3)] transform group-hover:scale-105 transition-transform duration-300">
+                            <defs>
+                                <!-- Gradiente Ouro Metálico -->
+                                <linearGradient id="goldMetallic" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#FFF3B0" />
+                                    <stop offset="30%" stop-color="#E5C158" />
+                                    <stop offset="70%" stop-color="#B8860B" />
+                                    <stop offset="100%" stop-color="#7A5200" />
+                                </linearGradient>
+                                <!-- Gradiente Prata Metálico -->
+                                <linearGradient id="silverMetallic" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#FFFFFF" />
+                                    <stop offset="40%" stop-color="#DCDCDC" />
+                                    <stop offset="75%" stop-color="#909090" />
+                                    <stop offset="100%" stop-color="#505560" />
+                                </linearGradient>
+                                <!-- Efeito de Brilho / Sombra Interna -->
+                                <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                                    <feGaussianBlur stdDeviation="2" result="blur" />
+                                    <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                                </filter>
+                            </defs>
+
+                            <!-- Arco Superior Externo (Prata Escovado com Textura de Pincel) -->
+                            <path d="M 60,12 A 48,48 0 1,1 18,72 C 22,64 30,55 40,58 C 28,70 32,92 58,96 C 84,100 102,78 100,52 C 98,28 78,14 60,12 Z" fill="url(#silverMetallic)" />
+                            
+                            <!-- Detalhes da Textura Pincelada do Arco Prata (Linhas Finas) -->
+                            <path d="M 65,16 A 44,44 0 0,1 100,48" stroke="#FFFFFF" stroke-width="1.5" fill="none" opacity="0.6" stroke-linecap="round"/>
+                            <path d="M 22,70 A 44,44 0 0,0 52,102" stroke="#404550" stroke-width="1.5" fill="none" opacity="0.5" stroke-linecap="round"/>
+
+                            <!-- Arco Interno e Inferior (Ouro Metálico Ouro/Dourado) -->
+                            <path d="M 58,28 A 32,32 0 1,0 94,64 C 92,54 86,46 80,48 C 86,58 84,76 68,82 C 50,88 36,72 38,54 C 40,38 52,30 58,28 Z" fill="url(#goldMetallic)" />
+                            <path d="M 76,28 C 95,40 106,60 98,80 C 92,95 72,106 52,104 C 70,102 90,88 94,68 C 96,52 86,36 76,28 Z" fill="url(#goldMetallic)" />
+
+                            <!-- Seta Ascendente em Zigue-Zague Metálica (Prata/Prata Claro) -->
+                            <path d="M 38,80 L 44,72 L 56,76 L 74,42 L 64,44 L 84,34 L 80,54 L 74,45 L 56,82 L 44,77 Z" fill="url(#silverMetallic)" filter="url(#glow)" />
+                        </svg>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-xl sm:text-2xl font-serif font-extrabold tracking-wider text-silver-metallic uppercase">CELERICONT</span>
+                        <span class="text-[8px] sm:text-[9px] uppercase tracking-[0.25em] text-gold font-semibold -mt-1">Contabilidade Consultiva</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden lg:flex items-center space-x-8 text-sm font-medium text-slate-300">
+                    <a href="#inicio" class="hover:text-gold transition-colors">Início</a>
+                    <a href="#sobre" class="hover:text-gold transition-colors">Sobre Nós</a>
+                    <a href="#servicos" class="hover:text-gold transition-colors">Serviços</a>
+                    <a href="#simulador" class="hover:text-gold transition-colors">Simulador</a>
+                    <a href="#minicursos" class="hover:text-gold transition-colors">Minicursos & Blog</a>
+                    <a href="#contato" class="hover:text-gold transition-colors">Contato</a>
+                </nav>
+
+                <!-- Desktop CTA Button -->
+                <div class="hidden lg:flex items-center space-x-4">
+                    <a href="https://wa.me/5512992163772?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20a%20equipe%20da%20Celericont." 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       class="inline-flex items-center px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider btn-gold transition-all duration-200 transform hover:-translate-y-0.5">
+                        <i class="fa-brands fa-whatsapp text-base mr-2"></i>
+                        (12) 99216-3772
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="flex lg:hidden">
+                    <button id="mobile-menu-btn" type="button" class="text-slate-300 hover:text-gold p-2 rounded-lg focus:outline-none" aria-label="Abrir Menu">
+                        <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-navy-950 border-b border-gold/20 px-4 pt-2 pb-6 space-y-3 shadow-2xl">
+            <a href="#inicio" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:text-gold hover:bg-navy-900">Início</a>
+            <a href="#sobre" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:text-gold hover:bg-navy-900">Sobre Nós</a>
+            <a href="#servicos" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:text-gold hover:bg-navy-900">Serviços</a>
+            <a href="#simulador" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:text-gold hover:bg-navy-900">Simulador Tributário</a>
+            <a href="#minicursos" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:text-gold hover:bg-navy-900">Minicursos & Blog</a>
+            <a href="#contato" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:text-gold hover:bg-navy-900">Contato</a>
+            <div class="pt-2">
+                <a href="https://wa.me/5512992163772" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   class="w-full flex items-center justify-center px-5 py-3 rounded-xl text-sm font-bold uppercase btn-gold">
+                    <i class="fa-brands fa-whatsapp text-lg mr-2"></i>
+                    WhatsApp: (12) 99216-3772
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. Seção Hero Impactante -->
+    <section id="inicio" class="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden">
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-gold/10 rounded-full blur-[140px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-7 text-center lg:text-left space-y-8">
+                    <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-gold/10 border border-gold/30 text-gold text-xs sm:text-sm font-semibold uppercase tracking-wider">
+                        <i class="fa-solid fa-location-dot text-gold"></i>
+                        <span>São José dos Campos - SP | Atendimento Nacional</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold tracking-tight leading-tight text-white">
+                        Contabilidade Estratégica & <span class="text-gold-metallic">Alta Performance</span>
+                    </h1>
+
+                    <p class="text-lg sm:text-xl text-slate-300 max-w-2xl font-light leading-relaxed">
+                        Proteja o seu patrimônio e otimize custos com inteligência tributária em <strong class="text-gold font-semibold">Simples Nacional, Lucro Presumido e Lucro Real</strong>. Preparação completa para a <strong class="text-gold font-semibold">Reforma Tributária</strong>.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#simulador" class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold uppercase tracking-wider text-xs btn-gold transition-all duration-200 text-center flex items-center justify-center">
+                            Simular Meu Regime
+                            <i class="fa-solid fa-calculator ml-3"></i>
+                        </a>
+                        <a href="https://wa.me/5512992163772?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Celericont." target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold uppercase tracking-wider text-xs btn-silver transition-all duration-200 text-center flex items-center justify-center">
+                            <i class="fa-brands fa-whatsapp text-lg mr-3"></i>
+                            Falar com Consultor
+                        </a>
+                    </div>
+
+                    <div class="grid grid-cols-3 gap-4 pt-8 border-t border-slate-800">
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-serif font-extrabold text-silver-metallic">100%</div>
+                            <div class="text-xs text-slate-400 mt-0.5 uppercase tracking-wider">Seguro e Digital</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-serif font-extrabold text-gold">Zero</div>
+                            <div class="text-xs text-slate-400 mt-0.5 uppercase tracking-wider">Burocracia</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-serif font-extrabold text-silver-metallic">SJC / SP</div>
+                            <div class="text-xs text-slate-400 mt-0.5 uppercase tracking-wider">Sede Própria</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Graphic Emblem Display -->
+                <div class="lg:col-span-5 relative">
+                    <div class="glass-card rounded-3xl p-8 relative shadow-2xl border border-gold/30 text-center flex flex-col items-center">
+                        <!-- Símbolo Oficial Ampliado no Card Hero -->
+                        <div class="w-40 h-40 mb-6 relative">
+                            <svg viewBox="0 0 120 120" class="w-full h-full drop-shadow-[0_0_20px_rgba(212,175,55,0.4)]">
+                                <use href="#goldMetallic" />
+                                <use href="#silverMetallic" />
+                                <path d="M 60,12 A 48,48 0 1,1 18,72 C 22,64 30,55 40,58 C 28,70 32,92 58,96 C 84,100 102,78 100,52 C 98,28 78,14 60,12 Z" fill="url(#silverMetallic)" />
+                                <path d="M 65,16 A 44,44 0 0,1 100,48" stroke="#FFFFFF" stroke-width="1.5" fill="none" opacity="0.6"/>
+                                <path d="M 22,70 A 44,44 0 0,0 52,102" stroke="#404550" stroke-width="1.5" fill="none" opacity="0.5"/>
+                                <path d="M 58,28 A 32,32 0 1,0 94,64 C 92,54 86,46 80,48 C 86,58 84,76 68,82 C 50,88 36,72 38,54 C 40,38 52,30 58,28 Z" fill="url(#goldMetallic)" />
+                                <path d="M 76,28 C 95,40 106,60 98,80 C 92,95 72,106 52,104 C 70,102 90,88 94,68 C 96,52 86,36 76,28 Z" fill="url(#goldMetallic)" />
+                                <path d="M 38,80 L 44,72 L 56,76 L 74,42 L 64,44 L 84,34 L 80,54 L 74,45 L 56,82 L 44,77 Z" fill="url(#silverMetallic)" />
+                            </svg>
+                        </div>
+                        
+                        <h3 class="text-2xl font-serif font-bold text-silver-metallic uppercase">CELERICONT</h3>
+                        <p class="text-xs text-gold uppercase tracking-[0.2em] font-semibold mt-1 mb-6">Gestão Tributária & Societária</p>
+
+                        <div class="w-full space-y-3 text-left">
+                            <div class="p-3.5 rounded-xl bg-navy-950/60 border border-gold/20 flex items-center justify-between text-xs">
+                                <span class="text-slate-300 font-medium"><i class="fa-solid fa-chart-line text-gold mr-2"></i> Diagnóstico Tributário</span>
+                                <span class="text-gold font-bold">Ativo</span>
+                            </div>
+                            <div class="p-3.5 rounded-xl bg-navy-950/60 border border-gold/20 flex items-center justify-between text-xs">
+                                <span class="text-slate-300 font-medium"><i class="fa-solid fa-shield-halved text-silver-metallic mr-2"></i> Compliance Fiscal</span>
+                                <span class="text-emerald-400 font-bold">100% OK</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Seção Sobre a Celericont -->
+    <section id="sobre" class="py-20 md:py-28 bg-navy-950 relative border-t border-gold/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                
+                <div class="space-y-6">
+                    <div class="inline-flex items-center space-x-2 text-gold font-semibold text-xs uppercase tracking-widest">
+                        <i class="fa-solid fa-landmark"></i>
+                        <span>Excelência e Tradição</span>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white leading-tight">
+                        Muito além de guias: inteligência contábil para impulsionar negócios
+                    </h2>
+                    <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
+                        Localizada em <strong class="text-white">São José dos Campos - SP</strong>, a <strong class="text-gold font-semibold">Celericont</strong> unifica o rigor da contabilidade tradicional ao dinamismo de soluções modernas. Focamos no suporte decisório de empresários que buscam previsibilidade e redução da carga tributária.
+                    </p>
+
+                    <div class="space-y-4 pt-2">
+                        <div class="flex items-start space-x-3">
+                            <div class="w-6 h-6 rounded-full bg-gold/20 text-gold flex items-center justify-center shrink-0 mt-1">
+                                <i class="fa-solid fa-check text-xs"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Simples Nacional & Gestão de Fator R</h4>
+                                <p class="text-xs text-slate-400">Reenquadramento de anexos para empresas de serviços, tecnologia e saúde.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-3">
+                            <div class="w-6 h-6 rounded-full bg-gold/20 text-gold flex items-center justify-center shrink-0 mt-1">
+                                <i class="fa-solid fa-check text-xs"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Lucro Presumido e Lucro Real</h4>
+                                <p class="text-xs text-slate-400">Apuração técnica rigorosa de tributos federais, estaduais e municipais.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-3">
+                            <div class="w-6 h-6 rounded-full bg-gold/20 text-gold flex items-center justify-center shrink-0 mt-1">
+                                <i class="fa-solid fa-check text-xs"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Adequação à Reforma Tributária</h4>
+                                <p class="text-xs text-slate-400">Simulação e transição antecipada para os novos modelos CBS e IBS.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-3xl p-8 sm:p-10 border border-gold/30">
+                    <h3 class="text-2xl font-serif font-bold text-gold mb-6 flex items-center">
+                        <i class="fa-solid fa-gem text-gold mr-3"></i>
+                        Diferenciais Celericont
+                    </h3>
+
+                    <div class="space-y-5">
+                        <div class="p-4 rounded-xl bg-navy-950/70 border border-gold/20">
+                            <h4 class="font-bold text-silver-metallic text-sm mb-1"><i class="fa-solid fa-user-shield text-gold mr-2"></i>Atendimento Personalizado</h4>
+                            <p class="text-xs text-slate-300">Acompanhamento direto via consultores dedicados e especialistas fiscais.</p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-navy-950/70 border border-gold/20">
+                            <h4 class="font-bold text-silver-metallic text-sm mb-1"><i class="fa-solid fa-shield-halved text-gold mr-2"></i>Auditoria Preventiva</h4>
+                            <p class="text-xs text-slate-300">Monitoramento constante para zerar riscos de autuação ou inconsistências junto ao fisco.</p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-navy-950/70 border border-gold/20">
+                            <h4 class="font-bold text-silver-metallic text-sm mb-1"><i class="fa-solid fa-chart-pie text-gold mr-2"></i>BPO Financeiro Estruturado</h4>
+                            <p class="text-xs text-slate-300">Relatórios de DRE e fluxo de caixa para decisões seguras.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Grid de Serviços -->
+    <section id="servicos" class="py-20 md:py-28 relative border-t border-gold/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-gold font-semibold text-xs uppercase tracking-widest">Nossas Soluções</span>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white">
+                    Serviços Contábeis Premium
+                </h2>
+                <p class="text-slate-300 text-sm sm:text-base">
+                    Estrutura completa para otimizar tributos, gerenciar obrigações e expandir sua empresa.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Serviço 1 -->
+                <div class="glass-card glass-card-hover rounded-2xl p-6 sm:p-8 transition-all flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-gold/10 text-gold flex items-center justify-center mb-6 text-xl group-hover:bg-gold group-hover:text-navy-950 transition-colors">
+                            <i class="fa-solid fa-building-circle-check"></i>
+                        </div>
+                        <h3 class="text-lg font-serif font-bold text-white mb-3">Abertura de Empresas</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed mb-4">
+                            Constituição ágil de empresas em São José dos Campos e região, com enquadramento societário e tributário otimizado.
+                        </p>
+                    </div>
+                    <ul class="text-[11px] space-y-2 text-slate-400 font-medium border-t border-slate-800 pt-4">
+                        <li class="flex items-center"><i class="fa-solid fa-check text-gold mr-2"></i> Estudo de CNAEs</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-gold mr-2"></i> Alvarás e Inscrições</li>
+                    </ul>
+                </div>
+
+                <!-- Serviço 2 -->
+                <div class="glass-card glass-card-hover rounded-2xl p-6 sm:p-8 transition-all flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-gold/10 text-gold flex items-center justify-center mb-6 text-xl group-hover:bg-gold group-hover:text-navy-950 transition-colors">
+                            <i class="fa-solid fa-calculator"></i>
+                        </div>
+                        <h3 class="text-lg font-serif font-bold text-white mb-3">Assessoria Fiscal & Tributária</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed mb-4">
+                            Apuração mensal minuciosa de tributos (Simples, Presumido e Real) e cumprimento rigoroso de SPED e obrigações.
+                        </p>
+                    </div>
+                    <ul class="text-[11px] space-y-2 text-slate-400 font-medium border-t border-slate-800 pt-4">
+                        <li class="flex items-center"><i class="fa-solid fa-check text-gold mr-2"></i> Revisão de NCM</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-gold mr-2"></i> Emissão de CNDs</li>
+                    </ul>
+                </div>
+
+                <!-- Serviço 3 -->
+                <div class="glass-card glass-card-hover rounded-2xl p-6 sm:p-8 transition-all flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-gold/10 text-gold flex items-center justify-center mb-6 text-xl group-hover:bg-gold group-hover:text-navy-950 transition-colors">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <h3 class="text-lg font-serif font-bold text-white mb-3">BPO Financeiro</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed mb-4">
+                            Terceirização da rotina financeira com conciliação bancária diária, fluxo de caixa e relatórios gerenciais claros.
+                        </p>
+                    </div>
+                    <ul class="text-[11px] space-y-2 text-slate-400 font-medium border-t border-slate-800 pt-4">
+                        <li class="flex items-center"><i class="fa-solid fa-check text-gold mr-2"></i> Contas a Pagar/Receber</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-gold mr-2"></i> Relatórios Mensais</li>
+                    </ul>
+                </div>
+
+                <!-- Serviço 4 -->
+                <div class="glass-card glass-card-hover rounded-2xl p-6 sm:p-8 transition-all flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-gold/10 text-gold flex items-center justify-center mb-6 text-xl group-hover:bg-gold group-hover:text-navy-950 transition-colors">
+                            <i class="fa-solid fa-scale-balanced"></i>
+                        </div>
+                        <h3 class="text-lg font-serif font-bold text-white mb-3">Planejamento Tributário</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed mb-4">
+                            Estudo preventivo para migração segura de regime tributário visando elisão fiscal dentro das normas da Receita.
+                        </p>
+                    </div>
+                    <ul class="text-[11px] space-y-2 text-slate-400 font-medium border-t border-slate-800 pt-4">
+                        <li class="flex items-center"><i class="fa-solid fa-check text-gold mr-2"></i> Elisão Fiscal Legal</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-gold mr-2"></i> Preparativo Reforma</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Simulador / Calculadora Interativa -->
+    <section id="simulador" class="py-20 md:py-28 bg-navy-950 border-t border-gold/10 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-3xl mx-auto text-center space-y-4 mb-12">
+                <span class="inline-block px-3 py-1 rounded-full bg-gold/10 text-gold font-semibold text-xs uppercase tracking-widest border border-gold/30">Ferramenta Celericont</span>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white">Simulador de Regime Tributário</h2>
+                <p class="text-slate-300 text-sm sm:text-base">
+                    Calcule o enquadramento estimado para o perfil do seu negócio em segundos.
+                </p>
+            </div>
+
+            <div class="max-w-4xl mx-auto glass-card rounded-3xl p-6 sm:p-10 border border-gold/30">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                    <!-- Formulário de Entrada -->
+                    <div class="lg:col-span-7 space-y-6">
+                        <div>
+                            <label for="tipoEmpresa" class="block text-xs font-semibold uppercase text-slate-300 mb-2">Segmento de Atuação</label>
+                            <select id="tipoEmpresa" class="w-full bg-navy-900 border border-gold/30 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-gold">
+                                <option value="servico">Prestação de Serviços em Geral</option>
+                                <option value="comercio">Comércio / Varejo</option>
+                                <option value="tecnologia">Tecnologia, SaaS & Software</option>
+                                <option value="saude">Saúde, Clínicas e Médicos</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="faturamentoMensal" class="block text-xs font-semibold uppercase text-slate-300 mb-2">
+                                Faturamento Mensal Estimado: <span id="fatValDisplay" class="text-gold font-bold">R$ 50.000</span>
+                            </label>
+                            <input type="range" id="faturamentoMensal" min="5000" max="800000" step="5000" value="50000" class="w-full accent-gold cursor-pointer">
+                            <div class="flex justify-between text-[10px] text-slate-400 mt-1">
+                                <span>R$ 5 mil</span>
+                                <span>R$ 400 mil</span>
+                                <span>R$ 800 mil+</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="despesasFolha" class="block text-xs font-semibold uppercase text-slate-300 mb-2">
+                                Despesas com Folha / Pró-Labore: <span id="folhaValDisplay" class="text-silver-metallic font-bold">R$ 15.000</span>
+                            </label>
+                            <input type="range" id="despesasFolha" min="0" max="300000" step="2000" value="15000" class="w-full accent-silver cursor-pointer">
+                            <div class="flex justify-between text-[10px] text-slate-400 mt-1">
+                                <span>R$ 0</span>
+                                <span>R$ 150 mil</span>
+                                <span>R$ 300 mil</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Resultado -->
+                    <div class="lg:col-span-5 bg-navy-900/90 rounded-2xl p-6 border border-gold/30 flex flex-col justify-between space-y-6">
+                        <div>
+                            <span class="text-[10px] uppercase text-slate-400 font-semibold tracking-widest">Recomendação Preliminar</span>
+                            <div id="regimeRecomendado" class="text-xl font-serif font-bold text-gold mt-2">Simples Nacional</div>
+                            <p id="explicacaoRegime" class="text-xs text-slate-300 mt-3 leading-relaxed">
+                                Para esta faixa de faturamento, o Simples Nacional tende a oferecer maior simplificação tributária.
+                            </p>
+                        </div>
+
+                        <div class="p-4 bg-navy-950 rounded-xl border border-gold/20 space-y-2">
+                            <div class="flex justify-between text-xs">
+                                <span class="text-slate-400">Fator R Calculado:</span>
+                                <span id="fatorRVal" class="font-bold text-white">30.0%</span>
+                            </div>
+                            <div class="flex justify-between text-xs">
+                                <span class="text-slate-400">Enquadramento:</span>
+                                <span id="anexoSug" class="font-bold text-gold">Anexo III (Alíquota menor)</span>
+                            </div>
+                        </div>
+
+                        <a href="https://wa.me/5512992163772?text=Fiz%20a%20simula%C3%A7%C3%A3o%20no%20site%20da%20Celericont%20e%20quero%20validar%20meu%20resultado." 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           class="w-full py-3 px-4 rounded-xl font-bold uppercase tracking-wider text-xs btn-gold text-center transition-all flex items-center justify-center">
+                            <i class="fa-brands fa-whatsapp text-base mr-2"></i>
+                            Validar com Contador
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <p class="text-center text-[10px] text-slate-500 mt-4">* Simulação informativa. Entre em contato para estudo tributário completo com balancete.</p>
+        </div>
+    </section>
+
+    <!-- 6. Seção de Minicursos & Blog -->
+    <section id="minicursos" class="py-20 md:py-28 relative border-t border-gold/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-gold font-semibold text-xs uppercase tracking-widest">Conteúdo Educativo</span>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white">
+                    Minicursos & Informativos Fiscais
+                </h2>
+                <p class="text-slate-300 text-sm sm:text-base">
+                    Artigos práticos elaborados pela equipe técnica da Celericont.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="glass-card glass-card-hover rounded-2xl overflow-hidden transition-all flex flex-col justify-between">
+                    <div class="p-6">
+                        <div class="inline-block px-3 py-1 rounded-full bg-gold/10 text-gold font-bold text-[10px] mb-3 uppercase tracking-wider border border-gold/30">Minicurso Express</div>
+                        <h3 class="text-lg font-serif font-bold text-white mb-2">Estratégias de Fator R no Simples Nacional</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed mb-4">
+                            Entenda como calcular e ajustar o pró-labore para enquadrar sua prestação de serviços no Anexo III (alíquota reduzida de 6%).
+                        </p>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <a href="https://wa.me/5512992163772?text=Quero%20acessar%20o%20minicurso%20de%20Fator%20R." target="_blank" class="inline-flex items-center text-xs font-bold text-gold hover:text-gold-light uppercase tracking-wider">
+                            Acessar Conteúdo <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="glass-card glass-card-hover rounded-2xl overflow-hidden transition-all flex flex-col justify-between">
+                    <div class="p-6">
+                        <div class="inline-block px-3 py-1 rounded-full bg-silver/10 text-silver-metallic font-bold text-[10px] mb-3 uppercase tracking-wider border border-silver/30">Guia Especial</div>
+                        <h3 class="text-lg font-serif font-bold text-white mb-2">Reforma Tributária e os Impactos em SJC</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed mb-4">
+                            Análise preventiva sobre a transição para CBS/IBS e como proteger suas margens operacionais.
+                        </p>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <a href="https://wa.me/5512992163772?text=Quero%20saber%20mais%20sobre%20a%20Reforma%20Tribut%C3%A1ria." target="_blank" class="inline-flex items-center text-xs font-bold text-gold hover:text-gold-light uppercase tracking-wider">
+                            Ler Informativo <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="glass-card glass-card-hover rounded-2xl overflow-hidden transition-all flex flex-col justify-between">
+                    <div class="p-6">
+                        <div class="inline-block px-3 py-1 rounded-full bg-gold/10 text-gold font-bold text-[10px] mb-3 uppercase tracking-wider border border-gold/30">Imposto de Renda</div>
+                        <h3 class="text-lg font-serif font-bold text-white mb-2">Distribuição de Lucros Isenta vs Pró-Labore</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed mb-4">
+                            Conheça as regras para retirar lucros da empresa sem incidência indevida de tributos federais.
+                        </p>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <a href="https://wa.me/5512992163772?text=Quero%20orienta%C3%A7%C3%A3o%20sobre%20Distribui%C3%A7%C3%A3o%20de%20Lucros." target="_blank" class="inline-flex items-center text-xs font-bold text-gold hover:text-gold-light uppercase tracking-wider">
+                            Falar com Consultor <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Seção de Contato -->
+    <section id="contato" class="py-20 md:py-28 bg-navy-950 border-t border-gold/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Informações Oficiais -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div>
+                        <span class="text-gold font-semibold text-xs uppercase tracking-widest">Contato Direto</span>
+                        <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white mt-2">
+                            Fale com a Celericont
+                        </h2>
+                        <p class="text-slate-300 mt-4 text-sm leading-relaxed">
+                            Nossa equipe técnica está pronta para atender com agilidade e total sigilo.
+                        </p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 rounded-xl bg-gold/10 text-gold flex items-center justify-center text-lg shrink-0 border border-gold/30">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">E-mail Oficial</h4>
+                                <a href="mailto:atendimento@celericont.com.br" class="text-slate-400 hover:text-gold transition-colors text-xs font-medium">atendimento@celericont.com.br</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 rounded-xl bg-gold/10 text-gold flex items-center justify-center text-lg shrink-0 border border-gold/30">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">WhatsApp & Telefone</h4>
+                                <a href="https://wa.me/5512992163772" target="_blank" class="text-slate-400 hover:text-gold transition-colors text-xs font-medium">(12) 99216-3772</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 rounded-xl bg-gold/10 text-gold flex items-center justify-center text-lg shrink-0 border border-gold/30">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Localização</h4>
+                                <p class="text-slate-400 text-xs">São José dos Campos - SP | Atendimento Nacional</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 rounded-xl bg-gold/10 text-gold flex items-center justify-center text-lg shrink-0 border border-gold/30">
+                                <i class="fa-solid fa-globe"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Portal Web</h4>
+                                <p class="text-slate-400 text-xs">celericont.com.br</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formulário de Proposta -->
+                <div class="lg:col-span-7">
+                    <div class="glass-card rounded-3xl p-6 sm:p-10 border border-gold/30">
+                        <h3 class="text-xl font-serif font-bold text-white mb-6">Solicitar Atendimento ou Proposta</h3>
+                        
+                        <form id="contactForm" class="space-y-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-[10px] font-semibold uppercase text-slate-300 mb-1">Seu Nome</label>
+                                    <input type="text" required placeholder="Nome completo" class="w-full bg-navy-900 border border-gold/20 rounded-xl px-4 py-3 text-white text-xs focus:outline-none focus:border-gold">
+                                </div>
+                                <div>
+                                    <label class="block text-[10px] font-semibold uppercase text-slate-300 mb-1">Empresa</label>
+                                    <input type="text" placeholder="Nome do negócio" class="w-full bg-navy-900 border border-gold/20 rounded-xl px-4 py-3 text-white text-xs focus:outline-none focus:border-gold">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-[10px] font-semibold uppercase text-slate-300 mb-1">E-mail</label>
+                                    <input type="email" required placeholder="seuemail@empresa.com" class="w-full bg-navy-900 border border-gold/20 rounded-xl px-4 py-3 text-white text-xs focus:outline-none focus:border-gold">
+                                </div>
+                                <div>
+                                    <label class="block text-[10px] font-semibold uppercase text-slate-300 mb-1">WhatsApp</label>
+                                    <input type="tel" required placeholder="(12) 99999-9999" class="w-full bg-navy-900 border border-gold/20 rounded-xl px-4 py-3 text-white text-xs focus:outline-none focus:border-gold">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-[10px] font-semibold uppercase text-slate-300 mb-1">Assunto</label>
+                                <select class="w-full bg-navy-900 border border-gold/20 rounded-xl px-4 py-3 text-white text-xs focus:outline-none focus:border-gold">
+                                    <option>Abertura de Empresa</option>
+                                    <option>Troca de Contador</option>
+                                    <option>Assessoria em Simples Nacional</option>
+                                    <option>Assessoria em Lucro Presumido / Real</option>
+                                    <option>BPO Financeiro</option>
+                                    <option>Consultoria de Reforma Tributária</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-[10px] font-semibold uppercase text-slate-300 mb-1">Mensagem</label>
+                                <textarea rows="4" placeholder="Descreva brevemente sua necessidade..." class="w-full bg-navy-900 border border-gold/20 rounded-xl px-4 py-3 text-white text-xs focus:outline-none focus:border-gold"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full py-4 rounded-xl font-bold uppercase tracking-wider text-xs btn-gold transition-colors">
+                                Enviar Solicitação
+                            </button>
+                        </form>
+
+                        <div id="formStatus" class="hidden mt-4 p-4 rounded-xl bg-gold/20 text-gold text-xs font-semibold border border-gold/40">
+                            Mensagem enviada com sucesso! Em breve entraremos em contato.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="bg-navy-950 text-slate-400 py-10 border-t border-gold/20 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <!-- Marca Rodapé -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8">
+                        <svg viewBox="0 0 120 120" class="w-full h-full">
+                            <path d="M 60,12 A 48,48 0 1,1 18,72 C 22,64 30,55 40,58 C 28,70 32,92 58,96 C 84,100 102,78 100,52 C 98,28 78,14 60,12 Z" fill="url(#silverMetallic)" />
+                            <path d="M 58,28 A 32,32 0 1,0 94,64 C 92,54 86,46 80,48 C 86,58 84,76 68,82 C 50,88 36,72 38,54 C 40,38 52,30 58,28 Z" fill="url(#goldMetallic)" />
+                            <path d="M 38,80 L 44,72 L 56,76 L 74,42 L 64,44 L 84,34 L 80,54 L 74,45 L 56,82 L 44,77 Z" fill="url(#silverMetallic)" />
+                        </svg>
+                    </div>
+                    <span class="text-sm font-serif font-bold text-white uppercase tracking-wider">Celericont Contabilidade</span>
+                </div>
+
+                <!-- Copyright -->
+                <div class="text-center text-[11px] text-slate-500">
+                    &copy; <span id="year"></span> Celericont Contabilidade — São José dos Campos / SP. Todos os direitos reservados.
+                </div>
+
+                <!-- Links Rápidos -->
+                <div class="flex space-x-6 text-[11px] font-medium">
+                    <a href="mailto:atendimento@celericont.com.br" class="hover:text-gold transition-colors">atendimento@celericont.com.br</a>
+                    <a href="https://wa.me/5512992163772" target="_blank" class="hover:text-gold transition-colors">(12) 99216-3772</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        const fatInput = document.getElementById('faturamentoMensal');
+        const folhaInput = document.getElementById('despesasFolha');
+        const tipoInput = document.getElementById('tipoEmpresa');
+
+        const fatDisplay = document.getElementById('fatValDisplay');
+        const folhaDisplay = document.getElementById('folhaValDisplay');
+        const regimeDisplay = document.getElementById('regimeRecomendado');
+        const explicacaoDisplay = document.getElementById('explicacaoRegime');
+        const fatorRDisplay = document.getElementById('fatorRVal');
+        const anexoDisplay = document.getElementById('anexoSug');
+
+        function formatCurrency(value) {
+            return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 }).format(value);
+        }
+
+        function calculateRegime() {
+            const fat = parseFloat(fatInput.value);
+            const folha = parseFloat(folhaInput.value);
+            const tipo = tipoInput.value;
+
+            fatDisplay.textContent = formatCurrency(fat);
+            folhaDisplay.textContent = formatCurrency(folha);
+
+            const fatorR = (folha / fat) * 100;
+            fatorRDisplay.textContent = fatorR.toFixed(1) + '%';
+
+            if (fat > 300000) {
+                regimeDisplay.textContent = 'Lucro Presumido / Lucro Real';
+                explicacaoDisplay.textContent = 'Faturamento elevado. A apuração pelo Lucro Presumido ou Lucro Real é o caminho ideal para otimização patrimonial.';
+                anexoDisplay.textContent = 'Regime Geral';
+            } else if (tipo === 'servico' || tipo === 'tecnologia' || tipo === 'saude') {
+                if (fatorR >= 28) {
+                    regimeDisplay.textContent = 'Simples Nacional (Anexo III)';
+                    explicacaoDisplay.textContent = 'Folha de pagamento superior a 28% do faturamento (Fator R ativado). Alíquota inicial reduzida de 6%.';
+                    anexoDisplay.textContent = 'Anexo III (Alíquota 6%)';
+                } else {
+                    regimeDisplay.textContent = 'Simples Nacional (Anexo V) / Presumido';
+                    explicacaoDisplay.textContent = 'Fator R abaixo de 28%. Recomendado planejar aumento de pró-labore ou migração para Lucro Presumido.';
+                    anexoDisplay.textContent = 'Anexo V (A partir de 15,5%)';
+                }
+            } else {
+                regimeDisplay.textContent = 'Simples Nacional (Anexo I - Comércio)';
+                explicacaoDisplay.textContent = 'Excelente enquadramento para atividades comerciais, garantindo DAS unificado e menor encargo.';
+                anexoDisplay.textContent = 'Anexo I (Comércio)';
+            }
+        }
+
+        fatInput.addEventListener('input', calculateRegime);
+        folhaInput.addEventListener('input', calculateRegime);
+        tipoInput.addEventListener('change', calculateRegime);
+
+        calculateRegime();
+
+        const contactForm = document.getElementById('contactForm');
+        const formStatus = document.getElementById('formStatus');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            formStatus.classList.remove('hidden');
+            contactForm.reset();
+            setTimeout(() => {
+                formStatus.classList.add('hidden');
+            }, 5000);
+        });
+    </script>
+</body>
+</html>
