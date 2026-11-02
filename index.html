@@ -6,7 +6,7 @@
     <title>Celericont | Contabilidade Inteligente & Consultoria Tributária em São José dos Campos - SP</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts Inter & Playfair Display / Cinzel for serif luxury headings -->
+    <!-- Google Fonts Inter & Cinzel -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -99,48 +99,41 @@
 </head>
 <body class="font-sans bg-navy-texture text-slate-200 antialiased selection:bg-gold selection:text-navy-950">
 
+    <!-- Definição dos gradientes SVG para o logotipo -->
+    <svg style="display: none;">
+        <defs>
+            <linearGradient id="goldMetallic" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#FFF3B0" />
+                <stop offset="30%" stop-color="#E5C158" />
+                <stop offset="70%" stop-color="#B8860B" />
+                <stop offset="100%" stop-color="#7A5200" />
+            </linearGradient>
+            <linearGradient id="silverMetallic" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#FFFFFF" />
+                <stop offset="40%" stop-color="#DCDCDC" />
+                <stop offset="75%" stop-color="#909090" />
+                <stop offset="100%" stop-color="#505560" />
+            </linearGradient>
+            <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="2" result="blur" />
+                <feComposite in="SourceGraphic" in2="blur" operator="over" />
+            </filter>
+        </defs>
+    </svg>
+
     <!-- 1. Cabeçalho Fixo com Navegação -->
     <header class="fixed top-0 left-0 w-full z-50 bg-navy-950/90 backdrop-blur-md border-b border-gold/20 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
-                <!-- Logo Oficial em SVG Fiel à Imagem -->
+                <!-- Logo -->
                 <a href="#" class="flex items-center space-x-3 group">
                     <div class="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center shrink-0">
                         <svg viewBox="0 0 120 120" class="w-full h-full drop-shadow-[0_0_10px_rgba(212,175,55,0.3)] transform group-hover:scale-105 transition-transform duration-300">
-                            <defs>
-                                <!-- Gradiente Ouro Metálico -->
-                                <linearGradient id="goldMetallic" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" stop-color="#FFF3B0" />
-                                    <stop offset="30%" stop-color="#E5C158" />
-                                    <stop offset="70%" stop-color="#B8860B" />
-                                    <stop offset="100%" stop-color="#7A5200" />
-                                </linearGradient>
-                                <!-- Gradiente Prata Metálico -->
-                                <linearGradient id="silverMetallic" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" stop-color="#FFFFFF" />
-                                    <stop offset="40%" stop-color="#DCDCDC" />
-                                    <stop offset="75%" stop-color="#909090" />
-                                    <stop offset="100%" stop-color="#505560" />
-                                </linearGradient>
-                                <!-- Efeito de Brilho / Sombra Interna -->
-                                <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-                                    <feGaussianBlur stdDeviation="2" result="blur" />
-                                    <feComposite in="SourceGraphic" in2="blur" operator="over" />
-                                </filter>
-                            </defs>
-
-                            <!-- Arco Superior Externo (Prata Escovado com Textura de Pincel) -->
                             <path d="M 60,12 A 48,48 0 1,1 18,72 C 22,64 30,55 40,58 C 28,70 32,92 58,96 C 84,100 102,78 100,52 C 98,28 78,14 60,12 Z" fill="url(#silverMetallic)" />
-                            
-                            <!-- Detalhes da Textura Pincelada do Arco Prata (Linhas Finas) -->
                             <path d="M 65,16 A 44,44 0 0,1 100,48" stroke="#FFFFFF" stroke-width="1.5" fill="none" opacity="0.6" stroke-linecap="round"/>
                             <path d="M 22,70 A 44,44 0 0,0 52,102" stroke="#404550" stroke-width="1.5" fill="none" opacity="0.5" stroke-linecap="round"/>
-
-                            <!-- Arco Interno e Inferior (Ouro Metálico Ouro/Dourado) -->
                             <path d="M 58,28 A 32,32 0 1,0 94,64 C 92,54 86,46 80,48 C 86,58 84,76 68,82 C 50,88 36,72 38,54 C 40,38 52,30 58,28 Z" fill="url(#goldMetallic)" />
                             <path d="M 76,28 C 95,40 106,60 98,80 C 92,95 72,106 52,104 C 70,102 90,88 94,68 C 96,52 86,36 76,28 Z" fill="url(#goldMetallic)" />
-
-                            <!-- Seta Ascendente em Zigue-Zague Metálica (Prata/Prata Claro) -->
                             <path d="M 38,80 L 44,72 L 56,76 L 74,42 L 64,44 L 84,34 L 80,54 L 74,45 L 56,82 L 44,77 Z" fill="url(#silverMetallic)" filter="url(#glow)" />
                         </svg>
                     </div>
@@ -174,7 +167,7 @@
                 <!-- Mobile menu button -->
                 <div class="flex lg:hidden">
                     <button id="mobile-menu-btn" type="button" class="text-slate-300 hover:text-gold p-2 rounded-lg focus:outline-none" aria-label="Abrir Menu">
-                        <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+                        <i class="fa-solid fa-bars text-xl"></i>
                     </button>
                 </div>
             </div>
@@ -202,7 +195,7 @@
 
     <!-- 2. Seção Hero Impactante -->
     <section id="inicio" class="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden">
-        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-gold/15 rounded-full blur-[140px] pointer-events-none"></div>
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-gold/10 rounded-full blur-[140px] pointer-events-none"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -251,11 +244,8 @@
                 <!-- Hero Graphic Emblem Display -->
                 <div class="lg:col-span-5 relative">
                     <div class="glass-card rounded-3xl p-8 relative shadow-2xl border border-gold/30 text-center flex flex-col items-center">
-                        <!-- Símbolo Oficial Ampliado no Card Hero -->
                         <div class="w-40 h-40 mb-6 relative">
                             <svg viewBox="0 0 120 120" class="w-full h-full drop-shadow-[0_0_20px_rgba(212,175,55,0.4)]">
-                                <use href="#goldMetallic" />
-                                <use href="#silverMetallic" />
                                 <path d="M 60,12 A 48,48 0 1,1 18,72 C 22,64 30,55 40,58 C 28,70 32,92 58,96 C 84,100 102,78 100,52 C 98,28 78,14 60,12 Z" fill="url(#silverMetallic)" />
                                 <path d="M 65,16 A 44,44 0 0,1 100,48" stroke="#FFFFFF" stroke-width="1.5" fill="none" opacity="0.6"/>
                                 <path d="M 22,70 A 44,44 0 0,0 52,102" stroke="#404550" stroke-width="1.5" fill="none" opacity="0.5"/>
@@ -288,73 +278,54 @@
     <!-- 3. Seção Sobre a Celericont -->
     <section id="sobre" class="py-20 md:py-28 bg-navy-950 relative border-t border-gold/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 
-                <div class="space-y-6">
-                    <div class="inline-flex items-center space-x-2 text-gold font-semibold text-xs uppercase tracking-widest">
-                        <i class="fa-solid fa-landmark"></i>
-                        <span>Excelência e Tradição</span>
-                    </div>
+                <div class="lg:col-span-7 space-y-6">
+                    <span class="text-gold font-semibold text-xs uppercase tracking-widest block">
+                        <i class="fa-solid fa-landmark mr-2"></i> Excelência e Compromisso
+                    </span>
                     <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white leading-tight">
-                        Muito além de guias: inteligência contábil para impulsionar negócios
+                        Sobre a Celericont Contabilidade
                     </h2>
-                    <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
-                        Localizada em <strong class="text-white">São José dos Campos - SP</strong>, a <strong class="text-gold font-semibold">Celericont</strong> unifica o rigor da contabilidade tradicional ao dinamismo de soluções modernas. Focamos no suporte decisório de empresários que buscam previsibilidade e redução da carga tributária.
+                    <p class="text-slate-300 text-base leading-relaxed">
+                        Sediada em <strong class="text-white">São José dos Campos - SP</strong>, a <strong class="text-gold font-semibold">Celericont Contabilidade</strong> une a precisão da ciência contábil às mais modernas tecnologias de gestão e análise fiscal.
                     </p>
-
-                    <div class="space-y-4 pt-2">
-                        <div class="flex items-start space-x-3">
-                            <div class="w-6 h-6 rounded-full bg-gold/20 text-gold flex items-center justify-center shrink-0 mt-1">
-                                <i class="fa-solid fa-check text-xs"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-white text-sm">Simples Nacional & Gestão de Fator R</h4>
-                                <p class="text-xs text-slate-400">Reenquadramento de anexos para empresas de serviços, tecnologia e saúde.</p>
-                            </div>
+                    <p class="text-slate-300 text-base leading-relaxed">
+                        O nosso compromisso vai além do cumprimento de obrigações acessórias: atuamos como parceiros estratégicos do seu negócio, oferecendo suporte consultivo para a redução legal de impostos, proteção patrimonial e tomada de decisões financeiras seguras.
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                        <div class="flex items-center space-x-3 p-3 rounded-xl bg-navy-900 border border-gold/10">
+                            <i class="fa-solid fa-check-circle text-gold text-lg"></i>
+                            <span class="text-xs text-slate-200 font-medium">Atendimento Agilizado</span>
                         </div>
-
-                        <div class="flex items-start space-x-3">
-                            <div class="w-6 h-6 rounded-full bg-gold/20 text-gold flex items-center justify-center shrink-0 mt-1">
-                                <i class="fa-solid fa-check text-xs"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-white text-sm">Lucro Presumido e Lucro Real</h4>
-                                <p class="text-xs text-slate-400">Apuração técnica rigorosa de tributos federais, estaduais e municipais.</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start space-x-3">
-                            <div class="w-6 h-6 rounded-full bg-gold/20 text-gold flex items-center justify-center shrink-0 mt-1">
-                                <i class="fa-solid fa-check text-xs"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-white text-sm">Adequação à Reforma Tributária</h4>
-                                <p class="text-xs text-slate-400">Simulação e transição antecipada para os novos modelos CBS e IBS.</p>
-                            </div>
+                        <div class="flex items-center space-x-3 p-3 rounded-xl bg-navy-900 border border-gold/10">
+                            <i class="fa-solid fa-shield-halved text-gold text-lg"></i>
+                            <span class="text-xs text-slate-200 font-medium">Compliance e Segurança Fiscal</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="glass-card rounded-3xl p-8 sm:p-10 border border-gold/30">
-                    <h3 class="text-2xl font-serif font-bold text-gold mb-6 flex items-center">
-                        <i class="fa-solid fa-gem text-gold mr-3"></i>
-                        Diferenciais Celericont
-                    </h3>
+                <div class="lg:col-span-5">
+                    <div class="glass-card rounded-3xl p-8 border border-gold/30 space-y-6">
+                        <h3 class="text-xl font-serif font-bold text-gold flex items-center">
+                            <i class="fa-solid fa-gem text-gold mr-3"></i> Diferenciais da Celericont
+                        </h3>
+                        
+                        <div class="space-y-4">
+                            <div class="p-4 rounded-xl bg-navy-950/80 border border-gold/20">
+                                <h4 class="font-bold text-silver-metallic text-sm mb-1">Atendimento Personalizado</h4>
+                                <p class="text-xs text-slate-300">Acompanhamento direto por especialistas contábeis e fiscais dedicados.</p>
+                            </div>
 
-                    <div class="space-y-5">
-                        <div class="p-4 rounded-xl bg-navy-950/70 border border-gold/20">
-                            <h4 class="font-bold text-silver-metallic text-sm mb-1"><i class="fa-solid fa-user-shield text-gold mr-2"></i>Atendimento Personalizado</h4>
-                            <p class="text-xs text-slate-300">Acompanhamento direto via consultores dedicados e especialistas fiscais.</p>
-                        </div>
+                            <div class="p-4 rounded-xl bg-navy-950/80 border border-gold/20">
+                                <h4 class="font-bold text-silver-metallic text-sm mb-1">Auditoria Preventiva</h4>
+                                <p class="text-xs text-slate-300">Monitoramento contínuo das declarações para mitigar qualquer risco com o fisco.</p>
+                            </div>
 
-                        <div class="p-4 rounded-xl bg-navy-950/70 border border-gold/20">
-                            <h4 class="font-bold text-silver-metallic text-sm mb-1"><i class="fa-solid fa-shield-halved text-gold mr-2"></i>Auditoria Preventiva</h4>
-                            <p class="text-xs text-slate-300">Monitoramento constante para zerar riscos de autuação ou inconsistências junto ao fisco.</p>
-                        </div>
-
-                        <div class="p-4 rounded-xl bg-navy-950/70 border border-gold/20">
-                            <h4 class="font-bold text-silver-metallic text-sm mb-1"><i class="fa-solid fa-chart-pie text-gold mr-2"></i>BPO Financeiro Estruturado</h4>
-                            <p class="text-xs text-slate-300">Relatórios de DRE e fluxo de caixa para decisões seguras.</p>
+                            <div class="p-4 rounded-xl bg-navy-950/80 border border-gold/20">
+                                <h4 class="font-bold text-silver-metallic text-sm mb-1">Tecnologia & Inovação</h4>
+                                <p class="text-xs text-slate-300">Processos 100% digitais e integrados para facilidade do empresário.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -363,87 +334,97 @@
         </div>
     </section>
 
-    <!-- 4. Grid de Serviços -->
-    <section id="servicos" class="py-20 md:py-28 relative border-t border-gold/10">
+    <!-- 4. Serviços Contábeis Especializados (Atualizados com os 6 itens da imagem) -->
+    <section id="servicos" class="py-20 md:py-28 relative border-t border-gold/10 bg-navy-950/60">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
                 <span class="text-gold font-semibold text-xs uppercase tracking-widest">Nossas Soluções</span>
                 <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white">
-                    Serviços Contábeis Premium
+                    Serviços Contábeis Especializados
                 </h2>
                 <p class="text-slate-300 text-sm sm:text-base">
-                    Estrutura completa para otimizar tributos, gerenciar obrigações e expandir sua empresa.
+                    Acompanhamento completo e personalizado para o seu negócio crescer de forma segura e eficiente.
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
-                <!-- Serviço 1 -->
-                <div class="glass-card glass-card-hover rounded-2xl p-6 sm:p-8 transition-all flex flex-col justify-between group">
+                <!-- 1. Escrituração Contábil -->
+                <div class="glass-card glass-card-hover rounded-2xl p-8 transition-all duration-300 flex flex-col justify-between group border border-gold/20">
                     <div>
                         <div class="w-12 h-12 rounded-xl bg-gold/10 text-gold flex items-center justify-center mb-6 text-xl group-hover:bg-gold group-hover:text-navy-950 transition-colors">
-                            <i class="fa-solid fa-building-circle-check"></i>
+                            <i class="fa-solid fa-file-lines"></i>
                         </div>
-                        <h3 class="text-lg font-serif font-bold text-white mb-3">Abertura de Empresas</h3>
-                        <p class="text-slate-400 text-xs leading-relaxed mb-4">
-                            Constituição ágil de empresas em São José dos Campos e região, com enquadramento societário e tributário otimizado.
+                        <h3 class="text-xl font-serif font-bold text-white mb-3">Escrituração Contábil</h3>
+                        <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                            Registro completo de todas as operações da sua empresa.
                         </p>
                     </div>
-                    <ul class="text-[11px] space-y-2 text-slate-400 font-medium border-t border-slate-800 pt-4">
-                        <li class="flex items-center"><i class="fa-solid fa-check text-gold mr-2"></i> Estudo de CNAEs</li>
-                        <li class="flex items-center"><i class="fa-solid fa-check text-gold mr-2"></i> Alvarás e Inscrições</li>
-                    </ul>
                 </div>
 
-                <!-- Serviço 2 -->
-                <div class="glass-card glass-card-hover rounded-2xl p-6 sm:p-8 transition-all flex flex-col justify-between group">
+                <!-- 2. Planejamento Tributário -->
+                <div class="glass-card glass-card-hover rounded-2xl p-8 transition-all duration-300 flex flex-col justify-between group border border-gold/20">
                     <div>
                         <div class="w-12 h-12 rounded-xl bg-gold/10 text-gold flex items-center justify-center mb-6 text-xl group-hover:bg-gold group-hover:text-navy-950 transition-colors">
                             <i class="fa-solid fa-calculator"></i>
                         </div>
-                        <h3 class="text-lg font-serif font-bold text-white mb-3">Assessoria Fiscal & Tributária</h3>
-                        <p class="text-slate-400 text-xs leading-relaxed mb-4">
-                            Apuração mensal minuciosa de tributos (Simples, Presumido e Real) e cumprimento rigoroso de SPED e obrigações.
+                        <h3 class="text-xl font-serif font-bold text-white mb-3">Planejamento Tributário</h3>
+                        <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                            Otimize sua carga tributária de forma legal e estratégica.
                         </p>
                     </div>
-                    <ul class="text-[11px] space-y-2 text-slate-400 font-medium border-t border-slate-800 pt-4">
-                        <li class="flex items-center"><i class="fa-solid fa-check text-gold mr-2"></i> Revisão de NCM</li>
-                        <li class="flex items-center"><i class="fa-solid fa-check text-gold mr-2"></i> Emissão de CNDs</li>
-                    </ul>
                 </div>
 
-                <!-- Serviço 3 -->
-                <div class="glass-card glass-card-hover rounded-2xl p-6 sm:p-8 transition-all flex flex-col justify-between group">
+                <!-- 3. Departamento Pessoal -->
+                <div class="glass-card glass-card-hover rounded-2xl p-8 transition-all duration-300 flex flex-col justify-between group border border-gold/20">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-gold/10 text-gold flex items-center justify-center mb-6 text-xl group-hover:bg-gold group-hover:text-navy-950 transition-colors">
+                            <i class="fa-solid fa-users-gear"></i>
+                        </div>
+                        <h3 class="text-xl font-serif font-bold text-white mb-3">Departamento Pessoal</h3>
+                        <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                            Gestão completa de folha de pagamento e obrigações trabalhistas.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 4. Consultorias Corporativa -->
+                <div class="glass-card glass-card-hover rounded-2xl p-8 transition-all duration-300 flex flex-col justify-between group border border-gold/20">
                     <div>
                         <div class="w-12 h-12 rounded-xl bg-gold/10 text-gold flex items-center justify-center mb-6 text-xl group-hover:bg-gold group-hover:text-navy-950 transition-colors">
                             <i class="fa-solid fa-chart-line"></i>
                         </div>
-                        <h3 class="text-lg font-serif font-bold text-white mb-3">BPO Financeiro</h3>
-                        <p class="text-slate-400 text-xs leading-relaxed mb-4">
-                            Terceirização da rotina financeira com conciliação bancária diária, fluxo de caixa e relatórios gerenciais claros.
+                        <h3 class="text-xl font-serif font-bold text-white mb-3">Consultorias Corporativa</h3>
+                        <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                            Análises e estratégias para crescimento sustentável.
                         </p>
                     </div>
-                    <ul class="text-[11px] space-y-2 text-slate-400 font-medium border-t border-slate-800 pt-4">
-                        <li class="flex items-center"><i class="fa-solid fa-check text-gold mr-2"></i> Contas a Pagar/Receber</li>
-                        <li class="flex items-center"><i class="fa-solid fa-check text-gold mr-2"></i> Relatórios Mensais</li>
-                    </ul>
                 </div>
 
-                <!-- Serviço 4 -->
-                <div class="glass-card glass-card-hover rounded-2xl p-6 sm:p-8 transition-all flex flex-col justify-between group">
+                <!-- 5. Constituição / Encerramento de Empresas -->
+                <div class="glass-card glass-card-hover rounded-2xl p-8 transition-all duration-300 flex flex-col justify-between group border border-gold/20">
                     <div>
                         <div class="w-12 h-12 rounded-xl bg-gold/10 text-gold flex items-center justify-center mb-6 text-xl group-hover:bg-gold group-hover:text-navy-950 transition-colors">
-                            <i class="fa-solid fa-scale-balanced"></i>
+                            <i class="fa-solid fa-city"></i>
                         </div>
-                        <h3 class="text-lg font-serif font-bold text-white mb-3">Planejamento Tributário</h3>
-                        <p class="text-slate-400 text-xs leading-relaxed mb-4">
-                            Estudo preventivo para migração segura de regime tributário visando elisão fiscal dentro das normas da Receita.
+                        <h3 class="text-xl font-serif font-bold text-white mb-3">Constituição / Encerramento de Empresas</h3>
+                        <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                            Assessoria completa para constituição, legalização e/ou extinções.
                         </p>
                     </div>
-                    <ul class="text-[11px] space-y-2 text-slate-400 font-medium border-t border-slate-800 pt-4">
-                        <li class="flex items-center"><i class="fa-solid fa-check text-gold mr-2"></i> Elisão Fiscal Legal</li>
-                        <li class="flex items-center"><i class="fa-solid fa-check text-gold mr-2"></i> Preparativo Reforma</li>
-                    </ul>
+                </div>
+
+                <!-- 6. Assessoria Fiscal -->
+                <div class="glass-card glass-card-hover rounded-2xl p-8 transition-all duration-300 flex flex-col justify-between group border border-gold/20">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-gold/10 text-gold flex items-center justify-center mb-6 text-xl group-hover:bg-gold group-hover:text-navy-950 transition-colors">
+                            <i class="fa-solid fa-receipt"></i>
+                        </div>
+                        <h3 class="text-xl font-serif font-bold text-white mb-3">Assessoria Fiscal</h3>
+                        <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                            Cálculo de impostos (ICMS, ISS, PIS, COFINS etc.) e declarações fiscais. Suporte nas esferas Federal, Estadual e Municipal.
+                        </p>
+                    </div>
                 </div>
 
             </div>
@@ -665,7 +646,7 @@
                     <div class="glass-card rounded-3xl p-6 sm:p-10 border border-gold/30">
                         <h3 class="text-xl font-serif font-bold text-white mb-6">Solicitar Atendimento ou Proposta</h3>
                         
-                        <!-- Substitua SEU_FORM_ID pelo ID gerado na sua conta Formspree conectada a atendimento@celericont.com.br -->
+                        <!-- Lembre-se de substituir SEU_FORM_ID pelo ID gerado na sua conta Formspree -->
                         <form id="contactForm" action="https://formspree.io/f/SEU_FORM_ID" method="POST" class="space-y-4">
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <div>
