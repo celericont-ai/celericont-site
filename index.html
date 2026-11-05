@@ -96,16 +96,16 @@
 </head>
 <body class="font-sans bg-navy-texture text-slate-200 antialiased selection:bg-gold selection:text-navy-950">
 
-    <!-- Definição Vetorial do Símbolo da Logo -->
+    <!-- Definição Vetorial com Arcos Concêntricos Alinhados e Seta Refinada -->
     <svg style="display: none;">
         <symbol id="celericont-symbol" viewBox="0 0 200 200">
-            <!-- 1. "C" Maior Externo Prateado -->
-            <path d="M 155 45 A 75 75 0 1 0 155 155" fill="none" stroke="#C0C0C0" stroke-width="20" stroke-linecap="round"/>
-            <!-- 2. "C" Menor Interno Dourado -->
-            <path d="M 135 65 A 50 50 0 1 0 135 135" fill="none" stroke="#D4AF37" stroke-width="15" stroke-linecap="round"/>
-            <!-- 3. Seta do Gráfico de Crescimento -->
-            <polyline points="75,120 90,110 105,125 130,80" fill="none" stroke="#E0E0E0" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
-            <polygon points="130,80 115,80 130,95" fill="#E0E0E0"/>
+            <!-- 1. "C" Maior Externo Prateado (Concêntrico Perfeito) -->
+            <path d="M 140 40 A 70 70 0 1 0 140 160" fill="none" stroke="#C0C0C0" stroke-width="18" stroke-linecap="round"/>
+            <!-- 2. "C" Menor Interno Dourado (Perfeitamente Alinhado ao Centro) -->
+            <path d="M 130 60 A 50 50 0 1 0 130 140" fill="none" stroke="#D4AF37" stroke-width="14" stroke-linecap="round"/>
+            <!-- 3. Seta do Gráfico de Crescimento (Traçado Elegante + Ponta Ajustada) -->
+            <polyline points="70,120 88,105 106,122 135,80" fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+            <polygon points="140,73 124,78 132,94" fill="#FFFFFF"/>
         </symbol>
     </svg>
 
@@ -224,13 +224,13 @@
                     </div>
                 </div>
 
-                <!-- Hero Card com Símbolo de Maior Destaque (w-44 h-44 / sm:w-52 sm:h-52) -->
+                <!-- Hero Card com Símbolo Ajustado -->
                 <div class="lg:col-span-5 relative">
                     <div class="glass-card rounded-3xl p-8 relative shadow-2xl border border-gold/30 text-center flex flex-col items-center">
                         <h3 class="text-2xl font-serif font-bold text-slate-100 uppercase text-gold-metallic mb-1">CELERICONT</h3>
                         <p class="text-[11px] uppercase text-silver-metallic tracking-[0.15em] font-medium mb-4">Soluções Contábeis Inteligentes</p>
 
-                        <!-- Símbolo ampliado de forma limpa e marcante -->
+                        <!-- Símbolo Vetorial Perfeitamente Concêntrico -->
                         <div class="w-44 h-44 sm:w-52 sm:h-52 my-2 relative flex items-center justify-center">
                             <svg class="w-full h-full drop-shadow-[0_0_20px_rgba(212,175,55,0.4)]">
                                 <use href="#celericont-symbol"/>
