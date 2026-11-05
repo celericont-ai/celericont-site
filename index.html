@@ -96,6 +96,17 @@
         .btn-silver:hover {
             background: linear-gradient(135deg, #F3E5AB 0%, #D4AF37 100%);
         }
+
+        /* Classe para fundir o fundo da imagem com a cor da página */
+        .logo-blend {
+            mix-blend-mode: luminosity;
+            opacity: 0.95;
+            transition: all 0.3s ease;
+        }
+        .logo-blend:hover {
+            mix-blend-mode: normal;
+            opacity: 1;
+        }
     </style>
 </head>
 <body class="font-sans bg-navy-texture text-slate-200 antialiased selection:bg-gold selection:text-navy-950">
@@ -104,10 +115,10 @@
     <header class="fixed top-0 left-0 w-full z-50 bg-navy-950/90 backdrop-blur-md border-b border-gold/20 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
-                <!-- Logotipo Esquerdo com Logo 2.jpg -->
+                <!-- Logotipo Esquerdo com Logo 2.jpg integrando ao fundo -->
                 <a href="https://github.com/celericont-ai/celericont-site" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-3 group">
-                    <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden border border-gold/40 shrink-0 shadow-md">
-                        <img src="https://raw.githubusercontent.com/celericont-ai/celericont-site/main/Logo%202.jpg" alt="Logo Celericont" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden flex items-center justify-center shrink-0 bg-[#0B132B]">
+                        <img src="https://raw.githubusercontent.com/celericont-ai/celericont-site/main/Logo%202.jpg" alt="Logo Celericont" class="w-full h-full object-cover logo-blend group-hover:scale-105 transition-transform duration-300">
                     </div>
                     <div class="flex flex-col">
                         <span class="text-xl sm:text-2xl font-serif font-extrabold tracking-wider text-slate-100 uppercase group-hover:text-gold transition-colors">CELERICONT</span>
@@ -115,7 +126,7 @@
                     </div>
                 </a>
 
-                <!-- Desktop Navigation Links (Menu Início Blindado contra Tradição Extensa) -->
+                <!-- Desktop Navigation Links -->
                 <nav class="hidden lg:flex items-center space-x-8 text-sm font-medium text-slate-300">
                     <a href="#inicio" class="hover:text-gold transition-colors" translate="no"><span lang="pt">Início</span></a>
                     <a href="#sobre" class="hover:text-gold transition-colors">Sobre Nós</a>
@@ -213,15 +224,15 @@
                     </div>
                 </div>
 
-                <!-- Hero Card Direito com a Logo 1.jpg -->
+                <!-- Hero Card Direito com a Logo 1.jpg fundida ao fundo -->
                 <div class="lg:col-span-5 relative">
                     <div class="glass-card rounded-3xl p-8 relative shadow-2xl border border-gold/30 text-center flex flex-col items-center">
                         <h3 class="text-2xl font-serif font-bold text-slate-100 uppercase text-gold-metallic mb-1">CELERICONT</h3>
                         <p class="text-[11px] uppercase text-silver-metallic tracking-[0.15em] font-medium mb-4">Soluções Contábeis Inteligentes</p>
 
-                        <!-- Exibição da Logo 1.jpg centralizada -->
-                        <div class="w-48 h-48 sm:w-56 sm:h-56 my-2 relative flex items-center justify-center rounded-2xl overflow-hidden border border-gold/30 shadow-lg bg-navy-900">
-                            <img src="https://raw.githubusercontent.com/celericont-ai/celericont-site/main/Logo%201.jpg" alt="Logo Principal Celericont" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500">
+                        <!-- Exibição da Logo 1.jpg com fundo adaptado e sem bordas duras -->
+                        <div class="w-48 h-48 sm:w-56 sm:h-56 my-2 relative flex items-center justify-center rounded-2xl overflow-hidden bg-[#0B132B]">
+                            <img src="https://raw.githubusercontent.com/celericont-ai/celericont-site/main/Logo%201.jpg" alt="Logo Principal Celericont" class="w-full h-full object-cover logo-blend transform hover:scale-105 transition-transform duration-500">
                         </div>
 
                         <!-- Indicadores Fiscais -->
@@ -337,7 +348,7 @@
                         </div>
                         <h3 class="text-xl font-serif font-bold text-white mb-3">Escrituração Contábil</h3>
                         <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
-                            Registro completo de todas as operações da sua empresa[cite: 5].
+                            Registro completo de todas as operações da sua empresa.
                         </p>
                     </div>
                 </div>
@@ -350,7 +361,7 @@
                         </div>
                         <h3 class="text-xl font-serif font-bold text-white mb-3">Planejamento Tributário</h3>
                         <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
-                            Otimize sua carga tributária de forma legal e estratégica[cite: 5].
+                            Otimize sua carga tributária de forma legal e estratégica.
                         </p>
                     </div>
                 </div>
@@ -363,7 +374,7 @@
                         </div>
                         <h3 class="text-xl font-serif font-bold text-white mb-3">Departamento Pessoal</h3>
                         <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
-                            Gestão completa de folha de pagamento e obrigações trabalhistas[cite: 5].
+                            Gestão completa de folha de pagamento e obrigações trabalhistas.
                         </p>
                     </div>
                 </div>
@@ -376,7 +387,7 @@
                         </div>
                         <h3 class="text-xl font-serif font-bold text-white mb-3">Consultorias Corporativas</h3>
                         <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
-                            Análises e estratégias para crescimento sustentável[cite: 5].
+                            Análises e estratégias para crescimento sustentável.
                         </p>
                     </div>
                 </div>
@@ -389,7 +400,7 @@
                         </div>
                         <h3 class="text-xl font-serif font-bold text-white mb-3">Constituição / Encerramento de Empresas</h3>
                         <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
-                            Assessoria completa para constituição, legalização e/ou extinções[cite: 5].
+                            Assessoria completa para constituição, legalização e/ou extinções.
                         </p>
                     </div>
                 </div>
@@ -402,7 +413,7 @@
                         </div>
                         <h3 class="text-xl font-serif font-bold text-white mb-3">Assessoria Fiscal</h3>
                         <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
-                            Cálculo de impostos e declarações fiscais. Suporte nas esferas Federal, Estadual e Municipal[cite: 5].
+                            Cálculo de impostos e declarações fiscais. Suporte nas esferas Federal, Estadual e Municipal.
                         </p>
                     </div>
                 </div>
@@ -694,8 +705,8 @@
             <div class="flex flex-col md:flex-row items-center justify-between gap-6">
                 <!-- Marca Rodapé -->
                 <div class="flex items-center space-x-3">
-                    <div class="w-8 h-8 rounded-full overflow-hidden border border-gold/30">
-                        <img src="https://raw.githubusercontent.com/celericont-ai/celericont-site/main/Logo%202.jpg" alt="Logo Celericont" class="w-full h-full object-cover">
+                    <div class="w-8 h-8 rounded-full overflow-hidden flex items-center justify-center bg-[#0B132B]">
+                        <img src="https://raw.githubusercontent.com/celericont-ai/celericont-site/main/Logo%202.jpg" alt="Logo Celericont" class="w-full h-full object-cover logo-blend">
                     </div>
                     <span class="text-sm font-serif font-bold text-white uppercase tracking-wider">Celericont Contabilidade</span>
                 </div>
