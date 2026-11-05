@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Celericont | Contabilidade Inteligente & Tecnológica em São José dos Campos - SP</title>
     
-    <!-- Favicon da Aba do Navegador -->
-    <link rel="icon" type="image/jpeg" href="https://raw.githubusercontent.com/celericont-ai/celericont-site/main/Logo%202.jpg">
+    <!-- Favicon Vetorial Perfeito com Fundo Transparente -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><path d='M 148 42 A 80 80 0 1 0 148 158' fill='none' stroke='%23C0C0C0' stroke-width='18' stroke-linecap='round'/><path d='M 132 62 A 55 55 0 1 0 132 138' fill='none' stroke='%23D4AF37' stroke-width='14' stroke-linecap='round'/><polyline points='72,118 90,102 108,120 138,76' fill='none' stroke='%23FFFFFF' stroke-width='7' stroke-linecap='round' stroke-linejoin='round'/><polygon points='138,76 122,79 130,95' fill='%23FFFFFF'/></svg>">
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -96,24 +96,33 @@
         .btn-silver:hover {
             background: linear-gradient(135deg, #F3E5AB 0%, #D4AF37 100%);
         }
-
-        /* Ajuste para fundir o fundo branco das imagens JPG com o fundo escuro do site */
-        .logo-blend {
-            background-color: #070B19;
-            mix-blend-mode: screen;
-        }
     </style>
 </head>
 <body class="font-sans bg-navy-texture text-slate-200 antialiased selection:bg-gold selection:text-navy-950">
+
+    <!-- Definição Vetorial Exata do Símbolo da Celericont -->
+    <svg style="display: none;">
+        <symbol id="celericont-symbol" viewBox="0 0 200 200">
+            <!-- 1. "C" Maior Externo Prateado -->
+            <path d="M 148 42 A 80 80 0 1 0 148 158" fill="none" stroke="#C0C0C0" stroke-width="18" stroke-linecap="round"/>
+            <!-- 2. "C" Menor Interno Dourado -->
+            <path d="M 132 62 A 55 55 0 1 0 132 138" fill="none" stroke="#D4AF37" stroke-width="14" stroke-linecap="round"/>
+            <!-- 3. Seta do Gráfico de Crescimento Central -->
+            <polyline points="72,118 90,102 108,120 138,76" fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+            <polygon points="138,76 122,79 130,95" fill="#FFFFFF"/>
+        </symbol>
+    </svg>
 
     <!-- 1. Cabeçalho Fixo -->
     <header class="fixed top-0 left-0 w-full z-50 bg-navy-950/90 backdrop-blur-md border-b border-gold/20 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
-                <!-- Logotipo Esquerdo com Logo 2.jpg com fundo fundido -->
+                <!-- Logotipo Esquerdo com o Símbolo Perfeito sem fundo branco -->
                 <a href="https://github.com/celericont-ai/celericont-site" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-3 group">
-                    <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden border border-gold/40 shrink-0 shadow-md bg-[#070B19] flex items-center justify-center">
-                        <img src="https://raw.githubusercontent.com/celericont-ai/celericont-site/main/Logo%202.jpg" alt="Logo Celericont" class="w-full h-full object-cover logo-blend transform group-hover:scale-105 transition-transform duration-300">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center shrink-0">
+                        <svg class="w-full h-full transform group-hover:scale-105 transition-transform duration-300">
+                            <use href="#celericont-symbol"/>
+                        </svg>
                     </div>
                     <div class="flex flex-col">
                         <span class="text-xl sm:text-2xl font-serif font-extrabold tracking-wider text-slate-100 uppercase group-hover:text-gold transition-colors">CELERICONT</span>
@@ -121,7 +130,7 @@
                     </div>
                 </a>
 
-                <!-- Desktop Navigation Links -->
+                <!-- Desktop Navigation Links (Menu Início blindado contra tradução longa) -->
                 <nav class="hidden lg:flex items-center space-x-8 text-sm font-medium text-slate-300">
                     <a href="#inicio" class="hover:text-gold transition-colors" translate="no"><span lang="pt">Início</span></a>
                     <a href="#sobre" class="hover:text-gold transition-colors">Sobre Nós</a>
@@ -219,15 +228,17 @@
                     </div>
                 </div>
 
-                <!-- Hero Card Direito com a Logo 1.jpg adaptada ao fundo escuro -->
+                <!-- Hero Card Direito com o Símbolo Centralizado sem fundo branco -->
                 <div class="lg:col-span-5 relative">
                     <div class="glass-card rounded-3xl p-8 relative shadow-2xl border border-gold/30 text-center flex flex-col items-center">
                         <h3 class="text-2xl font-serif font-bold text-slate-100 uppercase text-gold-metallic mb-1">CELERICONT</h3>
                         <p class="text-[11px] uppercase text-silver-metallic tracking-[0.15em] font-medium mb-4">Soluções Contábeis Inteligentes</p>
 
-                        <!-- Exibição da Logo 1.jpg centralizada com fundo fundido -->
-                        <div class="w-48 h-48 sm:w-56 sm:h-56 my-2 relative flex items-center justify-center rounded-2xl overflow-hidden border border-gold/30 shadow-lg bg-[#070B19]">
-                            <img src="https://raw.githubusercontent.com/celericont-ai/celericont-site/main/Logo%201.jpg" alt="Logo Principal Celericont" class="w-full h-full object-cover logo-blend transform hover:scale-105 transition-transform duration-500">
+                        <!-- Exibição do Símbolo Vetorial Perfeito -->
+                        <div class="w-44 h-44 sm:w-52 sm:h-52 my-2 relative flex items-center justify-center">
+                            <svg class="w-full h-full drop-shadow-[0_0_20px_rgba(212,175,55,0.4)]">
+                                <use href="#celericont-symbol"/>
+                            </svg>
                         </div>
 
                         <!-- Indicadores Fiscais -->
@@ -700,8 +711,10 @@
             <div class="flex flex-col md:flex-row items-center justify-between gap-6">
                 <!-- Marca Rodapé -->
                 <div class="flex items-center space-x-3">
-                    <div class="w-8 h-8 rounded-full overflow-hidden border border-gold/30 bg-[#070B19] flex items-center justify-center">
-                        <img src="https://raw.githubusercontent.com/celericont-ai/celericont-site/main/Logo%202.jpg" alt="Logo Celericont" class="w-full h-full object-cover logo-blend">
+                    <div class="w-8 h-8 flex items-center justify-center">
+                        <svg class="w-full h-full">
+                            <use href="#celericont-symbol"/>
+                        </svg>
                     </div>
                     <span class="text-sm font-serif font-bold text-white uppercase tracking-wider">Celericont Contabilidade</span>
                 </div>
