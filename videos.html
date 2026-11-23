@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vídeos & Minicursos | Celericont Contabilidade</title>
+    
+    <!-- Favicon Vetorial Perfeito com Fundo Transparente -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><path d='M 148 42 A 80 80 0 1 0 148 158' fill='none' stroke='%23C0C0C0' stroke-width='18' stroke-linecap='round'/><path d='M 132 62 A 55 55 0 1 0 132 138' fill='none' stroke='%23D4AF37' stroke-width='14' stroke-linecap='round'/><polyline points='72,118 90,102 108,120 138,76' fill='none' stroke='%23FFFFFF' stroke-width='7' stroke-linecap='round' stroke-linejoin='round'/><polygon points='138,76 122,79 130,95' fill='%23FFFFFF'/></svg>">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts Inter & Cinzel -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome 6 CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            800: '#141E30',
+                            900: '#0B132B',
+                            950: '#070B19'
+                        },
+                        gold: {
+                            DEFAULT: '#D4AF37',
+                            light: '#F3E5AB',
+                            dark: '#AA7C11',
+                            glow: 'rgba(212, 175, 55, 0.4)'
+                        },
+                        silver: {
+                            DEFAULT: '#C0C0C0',
+                            light: '#E8E8E8',
+                            dark: '#8A95A5'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Cinzel', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .bg-navy-texture {
+            background-color: #0B132B;
+            background-image: radial-gradient(circle at 50% 20%, #1C2541 0%, #0B132B 70%, #050814 100%);
+        }
+        
+        .glass-card {
+            background: rgba(28, 37, 65, 0.45);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+        }
+
+        .glass-card-hover:hover {
+            border-color: rgba(212, 175, 55, 0.55);
+            box-shadow: 0 0 28px rgba(212, 175, 55, 0.2);
+            transform: translateY(-4px);
+        }
+
+        .text-gold-metallic {
+            background: linear-gradient(135deg, #FFF099 0%, #D4AF37 50%, #996515 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, #D4AF37 0%, #AA7C11 100%);
+            color: #070B19;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-gold:hover {
+            background: linear-gradient(135deg, #F3E5AB 0%, #D4AF37 100%);
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.6);
+        }
+
+        .filter-btn.active {
+            background: linear-gradient(135deg, #D4AF37 0%, #AA7C11 100%);
+            color: #070B19;
+            border-color: #D4AF37;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body class="font-sans bg-navy-texture text-slate-200 antialiased selection:bg-gold selection:text-navy-950">
+
+    <!-- Definição Vetorial do Símbolo da Celericont -->
+    <svg style="display: none;">
+        <symbol id="celericont-symbol" viewBox="0 0 200 200">
+            <path d="M 148 42 A 80 80 0 1 0 148 158" fill="none" stroke="#C0C0C0" stroke-width="18" stroke-linecap="round"/>
+            <path d="M 132 62 A 55 55 0 1 0 132 138" fill="none" stroke="#D4AF37" stroke-width="14" stroke-linecap="round"/>
+            <polyline points="72,118 90,102 108,120 138,76" fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+            <polygon points="138,76 122,79 130,95" fill="#FFFFFF"/>
+        </symbol>
+    </svg>
+
+    <!-- 1. Cabeçalho Fixo (Conectado ao index.html) -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-navy-950/90 backdrop-blur-md border-b border-gold/20 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logotipo Esquerdo -->
+                <a href="index.html" class="flex items-center space-x-3 group">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center shrink-0">
+                        <svg class="w-full h-full transform group-hover:scale-105 transition-transform duration-300">
+                            <use href="#celericont-symbol"/>
+                        </svg>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-xl sm:text-2xl font-serif font-extrabold tracking-wider text-slate-100 uppercase group-hover:text-gold transition-colors">CELERICONT</span>
+                        <span class="text-[8px] sm:text-[9px] uppercase tracking-[0.25em] text-gold font-semibold -mt-1 group-hover:text-white transition-colors">Contabilidade & Consultoria</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden lg:flex items-center space-x-8 text-sm font-medium text-slate-300">
+                    <a href="index.html" class="hover:text-gold transition-colors" translate="no"><span lang="pt">Início</span></a>
+                    <a href="index.html#sobre" class="hover:text-gold transition-colors">Sobre Nós</a>
+                    <a href="index.html#servicos" class="hover:text-gold transition-colors">Serviços</a>
+                    <a href="index.html#simulador" class="hover:text-gold transition-colors">Simulador</a>
+                    <a href="videos.html" class="text-gold font-semibold border-b-2 border-gold pb-1">Vídeos & Aulas</a>
+                    <a href="index.html#contato" class="hover:text-gold transition-colors">Contato</a>
+                </nav>
+
+                <!-- Desktop CTA Button -->
+                <div class="hidden lg:flex items-center space-x-4">
+                    <a href="https://wa.me/5512992163772?text=Ol%C3%A1!%20Estava%20assistindo%20aos%20v%C3%ADdeos%20no%20site%20da%20Celericont." 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       class="inline-flex items-center px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider btn-gold transition-all duration-200 transform hover:-translate-y-0.5">
+                        <i class="fa-brands fa-whatsapp text-base mr-2"></i>
+                        (12) 99216-3772
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="flex lg:hidden">
+                    <button id="mobile-menu-btn" type="button" class="text-slate-300 hover:text-gold p-2 rounded-lg focus:outline-none" aria-label="Abrir Menu">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-navy-950 border-b border-gold/20 px-4 pt-2 pb-6 space-y-3 shadow-2xl">
+            <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:text-gold hover:bg-navy-900" translate="no"><span lang="pt">Início</span></a>
+            <a href="index.html#sobre" class="block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:text-gold hover:bg-navy-900">Sobre Nós</a>
+            <a href="index.html#servicos" class="block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:text-gold hover:bg-navy-900">Serviços</a>
+            <a href="index.html#simulador" class="block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:text-gold hover:bg-navy-900">Simulador Tributário</a>
+            <a href="videos.html" class="block px-3 py-2 rounded-md text-base font-bold text-gold bg-navy-900">Vídeos & Aulas</a>
+            <a href="index.html#contato" class="block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:text-gold hover:bg-navy-900">Contato</a>
+        </div>
+    </header>
+
+    <!-- 2. Cabeçalho da Biblioteca de Vídeos & Aula em Destaque -->
+    <section class="relative pt-32 pb-16 overflow-hidden">
+        <div class="absolute top-20 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-gold/10 rounded-full blur-[130px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Título da Seção -->
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-12">
+                <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-gold/10 border border-gold/30 text-gold text-xs font-semibold uppercase tracking-wider">
+                    <i class="fa-brands fa-youtube text-gold"></i>
+                    <span>Celericont Academy & Canal Oficial</span>
+                </div>
+                <h1 class="text-3xl sm:text-5xl font-serif font-bold text-white leading-tight">
+                    Minicursos & <span class="text-gold-metallic">Conteúdo Estratégico</span>
+                </h1>
+                <p class="text-slate-300 text-sm sm:text-base font-light">
+                    Aulas práticas sobre planejamento tributário, Imposto de Renda, Simples Nacional e os impactos da Reforma Tributária no seu negócio.
+                </p>
+            </div>
+
+            <!-- Aula em Destaque (Featured Player) -->
+            <div class="glass-card rounded-3xl p-6 sm:p-8 border border-gold/40 shadow-2xl">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <!-- Player Principal -->
+                    <div class="lg:col-span-7">
+                        <div class="aspect-video w-full rounded-2xl overflow-hidden border border-gold/30 shadow-[0_0_25px_rgba(0,0,0,0.6)] bg-navy-950">
+                            <!-- Substitua SEU_ID_DESTAQUE pelo código do vídeo do YouTube -->
+                            <iframe 
+                                class="w-full h-full" 
+                                src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0" 
+                                title="Aula em Destaque - Celericont" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+
+                    <!-- Informações da Aula em Destaque -->
+                    <div class="lg:col-span-5 space-y-5">
+                        <div class="flex items-center space-x-2">
+                            <span class="px-3 py-1 rounded-full bg-gold text-navy-950 font-bold text-[10px] uppercase tracking-wider">Aula em Destaque</span>
+                            <span class="text-xs text-slate-400"><i class="fa-regular fa-clock mr-1"></i> Módulo Completo</span>
+                        </div>
+                        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-white leading-snug">
+                            Guia Definitivo: Como Reduzir Impostos Legalmente na Sua Empresa
+                        </h2>
+                        <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                            Descubra como estruturar o pró-labore, utilizar o Fator R a seu favor e escolher entre Simples Nacional e Lucro Presumido com segurança jurídica.
+                        </p>
+                        <div class="pt-2 flex flex-col sm:flex-row gap-3">
+                            <a href="https://wa.me/5512992163772?text=Assisti%20%C3%A0%20aula%20em%20destaque%20e%20quero%20uma%20an%C3%A1lise%20tribut%C3%A1ria." 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               class="px-6 py-3.5 rounded-xl font-bold uppercase tracking-wider text-xs btn-gold text-center flex items-center justify-center">
+                                <i class="fa-brands fa-whatsapp text-base mr-2"></i>
+                                Tirar Dúvidas com Contador
+                            </a>
+                            <a href
