@@ -103,7 +103,7 @@
         </symbol>
     </svg>
 
-    <!-- 1. Cabeçalho Fixo (Conectado ao index.html) -->
+    <!-- 1. Cabeçalho Fixo (100% Sincronizado com index.html e blog.html) -->
     <header class="fixed top-0 left-0 w-full z-50 bg-navy-950/90 backdrop-blur-md border-b border-gold/20 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
@@ -121,12 +121,13 @@
                 </a>
 
                 <!-- Desktop Navigation Links -->
-                <nav class="hidden lg:flex items-center space-x-8 text-sm font-medium text-slate-300">
+                <nav class="hidden lg:flex items-center space-x-7 text-sm font-medium text-slate-300">
                     <a href="index.html" class="hover:text-gold transition-colors" translate="no"><span lang="pt">Início</span></a>
                     <a href="index.html#sobre" class="hover:text-gold transition-colors">Sobre Nós</a>
                     <a href="index.html#servicos" class="hover:text-gold transition-colors">Serviços</a>
                     <a href="index.html#simulador" class="hover:text-gold transition-colors">Simulador</a>
                     <a href="videos.html" class="text-gold font-semibold border-b-2 border-gold pb-1">Vídeos & Aulas</a>
+                    <a href="blog.html" class="hover:text-gold transition-colors">Blog & Dicas</a>
                     <a href="index.html#contato" class="hover:text-gold transition-colors">Contato</a>
                 </nav>
 
@@ -157,7 +158,17 @@
             <a href="index.html#servicos" class="block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:text-gold hover:bg-navy-900">Serviços</a>
             <a href="index.html#simulador" class="block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:text-gold hover:bg-navy-900">Simulador Tributário</a>
             <a href="videos.html" class="block px-3 py-2 rounded-md text-base font-bold text-gold bg-navy-900">Vídeos & Aulas</a>
+            <a href="blog.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:text-gold hover:bg-navy-900">Blog & Dicas</a>
             <a href="index.html#contato" class="block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:text-gold hover:bg-navy-900">Contato</a>
+            <div class="pt-2">
+                <a href="https://wa.me/5512992163772" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   class="w-full flex items-center justify-center px-5 py-3 rounded-xl text-sm font-bold uppercase btn-gold">
+                    <i class="fa-brands fa-whatsapp text-lg mr-2"></i>
+                    WhatsApp: (12) 99216-3772
+                </a>
+            </div>
         </div>
     </header>
 
@@ -218,4 +229,288 @@
                                 <i class="fa-brands fa-whatsapp text-base mr-2"></i>
                                 Tirar Dúvidas com Contador
                             </a>
-                            <a href
+                            <a href="https://www.youtube.com/@Celericont" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               class="px-5 py-3.5 rounded-xl font-semibold uppercase tracking-wider text-xs bg-navy-900 border border-gold/30 text-slate-200 hover:border-gold hover:text-gold transition-all text-center flex items-center justify-center">
+                                <i class="fa-brands fa-youtube text-base mr-2 text-red-500"></i>
+                                Inscrever-se
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Grade de Vídeos com Filtros por Categoria -->
+    <section class="py-12 pb-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Barra de Filtros -->
+            <div class="flex flex-wrap items-center justify-between gap-4 mb-10 pb-6 border-b border-gold/15">
+                <h3 class="text-xl font-serif font-bold text-white">Biblioteca de Aulas</h3>
+                
+                <div class="flex flex-wrap gap-2" id="filter-buttons">
+                    <button data-filter="all" class="filter-btn active px-4 py-2 rounded-full text-xs border border-gold/30 transition-all">
+                        Todos os Vídeos
+                    </button>
+                    <button data-filter="simples" class="filter-btn px-4 py-2 rounded-full text-xs bg-navy-900/80 text-slate-300 border border-gold/20 hover:border-gold/50 transition-all">
+                        Simples Nacional & Fator R
+                    </button>
+                    <button data-filter="irpf" class="filter-btn px-4 py-2 rounded-full text-xs bg-navy-900/80 text-slate-300 border border-gold/20 hover:border-gold/50 transition-all">
+                        Imposto de Renda
+                    </button>
+                    <button data-filter="reforma" class="filter-btn px-4 py-2 rounded-full text-xs bg-navy-900/80 text-slate-300 border border-gold/20 hover:border-gold/50 transition-all">
+                        Reforma Tributária
+                    </button>
+                </div>
+            </div>
+
+            <!-- Grid de Cards de Vídeo -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="video-grid">
+
+                <!-- Vídeo 1 -->
+                <div class="video-card glass-card glass-card-hover rounded-2xl overflow-hidden transition-all duration-300 flex flex-col justify-between" data-category="simples">
+                    <div>
+                        <div class="aspect-video w-full bg-navy-950 border-b border-gold/20">
+                            <iframe class="w-full h-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0" title="Fator R na Prática" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="px-2.5 py-0.5 rounded-full bg-gold/10 text-gold font-bold text-[10px] uppercase tracking-wider border border-gold/30">Simples Nacional</span>
+                                <span class="text-[11px] text-slate-400">Aula 01</span>
+                            </div>
+                            <h4 class="text-lg font-serif font-bold text-white mb-2">Como Calcular o Fator R e Pagar Apenas 6%</h4>
+                            <p class="text-slate-400 text-xs leading-relaxed">
+                                Passo a passo prático para prestadores de serviços saírem do Anexo V e economizarem todos os meses no PGDAS.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 pt-2">
+                        <a href="index.html#simulador" class="inline-flex items-center text-xs font-bold text-gold hover:text-gold-light uppercase tracking-wider">
+                            Testar no Simulador <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Vídeo 2 -->
+                <div class="video-card glass-card glass-card-hover rounded-2xl overflow-hidden transition-all duration-300 flex flex-col justify-between" data-category="irpf">
+                    <div>
+                        <div class="aspect-video w-full bg-navy-950 border-b border-gold/20">
+                            <iframe class="w-full h-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0" title="Minicurso Imposto de Renda" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-200 font-bold text-[10px] uppercase tracking-wider border border-slate-600">Imposto de Renda</span>
+                                <span class="text-[11px] text-slate-400">Módulo 01</span>
+                            </div>
+                            <h4 class="text-lg font-serif font-bold text-white mb-2">Minicurso IRPF: Quem Está Obrigado a Declarar?</h4>
+                            <p class="text-slate-400 text-xs leading-relaxed">
+                                Entenda todas as regras de obrigatoriedade, rendimentos isentos, bens e direitos para evitar a malha fina.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 pt-2">
+                        <a href="https://wa.me/5512992163772?text=Quero%20ajuda%20com%20meu%20Imposto%20de%20Renda." target="_blank" class="inline-flex items-center text-xs font-bold text-gold hover:text-gold-light uppercase tracking-wider">
+                            Solicitar Declaração <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Vídeo 3 -->
+                <div class="video-card glass-card glass-card-hover rounded-2xl overflow-hidden transition-all duration-300 flex flex-col justify-between" data-category="reforma">
+                    <div>
+                        <div class="aspect-video w-full bg-navy-950 border-b border-gold/20">
+                            <iframe class="w-full h-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0" title="Reforma Tributária no Simples" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="px-2.5 py-0.5 rounded-full bg-gold/10 text-gold font-bold text-[10px] uppercase tracking-wider border border-gold/30">Reforma Tributária</span>
+                                <span class="text-[11px] text-slate-400">Especial</span>
+                            </div>
+                            <h4 class="text-lg font-serif font-bold text-white mb-2">Reforma Tributária: O Que Muda no Simples Nacional</h4>
+                            <p class="text-slate-400 text-xs leading-relaxed">
+                                Como funcionará o recolhimento híbrido de CBS/IBS e a transferência de créditos para clientes B2B.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 pt-2">
+                        <a href="blog.html#destaque-reforma" class="inline-flex items-center text-xs font-bold text-gold hover:text-gold-light uppercase tracking-wider">
+                            Ler Guia no Blog <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Vídeo 4 -->
+                <div class="video-card glass-card glass-card-hover rounded-2xl overflow-hidden transition-all duration-300 flex flex-col justify-between" data-category="simples">
+                    <div>
+                        <div class="aspect-video w-full bg-navy-950 border-b border-gold/20">
+                            <iframe class="w-full h-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0" title="Distribuição de Lucros" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="px-2.5 py-0.5 rounded-full bg-gold/10 text-gold font-bold text-[10px] uppercase tracking-wider border border-gold/30">Simples Nacional</span>
+                                <span class="text-[11px] text-slate-400">Aula 02</span>
+                            </div>
+                            <h4 class="text-lg font-serif font-bold text-white mb-2">Pró-Labore vs Distribuição de Lucros Isenta</h4>
+                            <p class="text-slate-400 text-xs leading-relaxed">
+                                A importância da escrituração contábil regular para comprovar lucros e distribuí-los sem IRRF e INSS.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 pt-2">
+                        <a href="blog.html" class="inline-flex items-center text-xs font-bold text-gold hover:text-gold-light uppercase tracking-wider">
+                            Ver Artigo Completo <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Vídeo 5 -->
+                <div class="video-card glass-card glass-card-hover rounded-2xl overflow-hidden transition-all duration-300 flex flex-col justify-between" data-category="irpf">
+                    <div>
+                        <div class="aspect-video w-full bg-navy-950 border-b border-gold/20">
+                            <iframe class="w-full h-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0" title="Investimentos no IRPF" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-200 font-bold text-[10px] uppercase tracking-wider border border-slate-600">Imposto de Renda</span>
+                                <span class="text-[11px] text-slate-400">Módulo 02</span>
+                            </div>
+                            <h4 class="text-lg font-serif font-bold text-white mb-2">Como Declarar Ações, FIIs e Renda Fixa</h4>
+                            <p class="text-slate-400 text-xs leading-relaxed">
+                                Guia completo para lançar posição em custódia, dividendos, JCP e apuração de DARF sobre ganho de capital.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 pt-2">
+                        <a href="https://wa.me/5512992163772?text=Preciso%20de%20suporte%20para%20declarar%20investimentos." target="_blank" class="inline-flex items-center text-xs font-bold text-gold hover:text-gold-light uppercase tracking-wider">
+                            Falar com Especialista <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Vídeo 6 -->
+                <div class="video-card glass-card glass-card-hover rounded-2xl overflow-hidden transition-all duration-300 flex flex-col justify-between" data-category="reforma">
+                    <div>
+                        <div class="aspect-video w-full bg-navy-950 border-b border-gold/20">
+                            <iframe class="w-full h-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0" title="Split Payment" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="px-2.5 py-0.5 rounded-full bg-gold/10 text-gold font-bold text-[10px] uppercase tracking-wider border border-gold/30">Reforma Tributária</span>
+                                <span class="text-[11px] text-slate-400">Gestão</span>
+                            </div>
+                            <h4 class="text-lg font-serif font-bold text-white mb-2">Split Payment: Impacto no Fluxo de Caixa</h4>
+                            <p class="text-slate-400 text-xs leading-relaxed">
+                                Prepare o financeiro da sua empresa para a retenção automática de tributos no momento da liquidação financeira.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 pt-2">
+                        <a href="index.html#contato" class="inline-flex items-center text-xs font-bold text-gold hover:text-gold-light uppercase tracking-wider">
+                            Preparar Minha Empresa <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Banner CTA Final -->
+    <section class="py-16 bg-navy-950 border-t border-gold/20">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="glass-card rounded-3xl p-8 sm:p-12 border border-gold/30 space-y-6">
+                <h2 class="text-2xl sm:text-3xl font-serif font-bold text-white">
+                    Quer aplicar essas estratégias na sua empresa?
+                </h2>
+                <p class="text-slate-300 text-sm max-w-2xl mx-auto">
+                    Nossa equipe em São José dos Campos atende empresas de todo o Brasil com planejamento tributário personalizado e contabilidade digital.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4 pt-2">
+                    <a href="index.html#simulador" class="px-8 py-4 rounded-xl font-bold uppercase tracking-wider text-xs btn-gold">
+                        Simular Regime Tributário
+                    </a>
+                    <a href="blog.html" class="px-8 py-4 rounded-xl font-bold uppercase tracking-wider text-xs bg-navy-900 border border-gold/30 text-slate-200 hover:border-gold hover:text-gold transition-all">
+                        Ler Dicas no Blog
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Rodapé -->
+    <footer class="bg-navy-950 text-slate-400 py-10 border-t border-gold/20 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 flex items-center justify-center">
+                        <svg class="w-full h-full">
+                            <use href="#celericont-symbol"/>
+                        </svg>
+                    </div>
+                    <span class="text-sm font-serif font-bold text-white uppercase tracking-wider">Celericont Contabilidade</span>
+                </div>
+
+                <div class="text-center text-[11px] text-slate-500">
+                    &copy; <span id="year"></span> Celericont Contabilidade — São José dos Campos / SP. Todos os direitos reservados.
+                </div>
+
+                <div class="flex space-x-4 text-sm">
+                    <a href="https://www.instagram.com/celericont/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-gold transition-colors" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram text-base"></i>
+                    </a>
+                    <a href="https://www.facebook.com/celericont.contabilidade" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-gold transition-colors" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook-f text-base"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@Celericont" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-gold transition-colors" aria-label="YouTube">
+                        <i class="fa-brands fa-youtube text-base"></i>
+                    </a>
+                    <a href="https://wa.me/5512992163772" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-gold transition-colors" aria-label="WhatsApp">
+                        <i class="fa-brands fa-whatsapp text-base"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts de Interatividade -->
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Menu Mobile
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Filtro de Categorias de Vídeos
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const videoCards = document.querySelectorAll('.video-card');
+
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Atualiza estilo do botão ativo
+                filterButtons.forEach(b => {
+                    b.classList.remove('active');
+                    b.classList.add('bg-navy-900/80', 'text-slate-300');
+                });
+                btn.classList.add('active');
+                btn.classList.remove('bg-navy-900/80', 'text-slate-300');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                videoCards.forEach(card => {
+                    if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
