@@ -113,12 +113,12 @@
         </symbol>
     </svg>
 
-    <!-- 1. Cabeçalho Fixo -->
+    <!-- 1. Cabeçalho Fixo (Sincronizado com videos.html e blog.html) -->
     <header class="fixed top-0 left-0 w-full z-50 bg-navy-950/90 backdrop-blur-md border-b border-gold/20 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
-                <!-- Logotipo Esquerdo com o Símbolo Perfeito sem fundo branco -->
-                <a href="https://github.com/celericont-ai/celericont-site" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-3 group">
+                <!-- Logotipo Esquerdo -->
+                <a href="index.html" class="flex items-center space-x-3 group">
                     <div class="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center shrink-0">
                         <svg class="w-full h-full transform group-hover:scale-105 transition-transform duration-300">
                             <use href="#celericont-symbol"/>
@@ -130,13 +130,14 @@
                     </div>
                 </a>
 
-                <!-- Desktop Navigation Links (Menu Início blindado contra tradução longa) -->
-                <nav class="hidden lg:flex items-center space-x-8 text-sm font-medium text-slate-300">
-                    <a href="#inicio" class="hover:text-gold transition-colors" translate="no"><span lang="pt">Início</span></a>
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden lg:flex items-center space-x-7 text-sm font-medium text-slate-300">
+                    <a href="#inicio" class="text-gold font-semibold border-b-2 border-gold pb-1" translate="no"><span lang="pt">Início</span></a>
                     <a href="#sobre" class="hover:text-gold transition-colors">Sobre Nós</a>
                     <a href="#servicos" class="hover:text-gold transition-colors">Serviços</a>
                     <a href="#simulador" class="hover:text-gold transition-colors">Simulador</a>
-                    <a href="#minicursos" class="hover:text-gold transition-colors">Minicursos & Blog</a>
+                    <a href="videos.html" class="hover:text-gold transition-colors">Vídeos & Aulas</a>
+                    <a href="blog.html" class="hover:text-gold transition-colors">Blog & Dicas</a>
                     <a href="#contato" class="hover:text-gold transition-colors">Contato</a>
                 </nav>
 
@@ -162,11 +163,12 @@
 
         <!-- Mobile Navigation Drawer -->
         <div id="mobile-menu" class="hidden lg:hidden bg-navy-950 border-b border-gold/20 px-4 pt-2 pb-6 space-y-3 shadow-2xl">
-            <a href="#inicio" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:text-gold hover:bg-navy-900" translate="no"><span lang="pt">Início</span></a>
+            <a href="#inicio" class="mobile-link block px-3 py-2 rounded-md text-base font-bold text-gold bg-navy-900" translate="no"><span lang="pt">Início</span></a>
             <a href="#sobre" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:text-gold hover:bg-navy-900">Sobre Nós</a>
             <a href="#servicos" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:text-gold hover:bg-navy-900">Serviços</a>
             <a href="#simulador" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:text-gold hover:bg-navy-900">Simulador Tributário</a>
-            <a href="#minicursos" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:text-gold hover:bg-navy-900">Minicursos & Blog</a>
+            <a href="videos.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:text-gold hover:bg-navy-900">Vídeos & Aulas</a>
+            <a href="blog.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:text-gold hover:bg-navy-900">Blog & Dicas</a>
             <a href="#contato" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:text-gold hover:bg-navy-900">Contato</a>
             <div class="pt-2">
                 <a href="https://wa.me/5512992163772" 
@@ -228,7 +230,7 @@
                     </div>
                 </div>
 
-                <!-- Hero Card Direito com o Símbolo Centralizado sem fundo branco -->
+                <!-- Hero Card Direito com o Símbolo Centralizado -->
                 <div class="lg:col-span-5 relative">
                     <div class="glass-card rounded-3xl p-8 relative shadow-2xl border border-gold/30 text-center flex flex-col items-center">
                         <h3 class="text-2xl font-serif font-bold text-slate-100 uppercase text-gold-metallic mb-1">CELERICONT</h3>
@@ -354,7 +356,7 @@
                         </div>
                         <h3 class="text-xl font-serif font-bold text-white mb-3">Escrituração Contábil</h3>
                         <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
-                            Registro completo de todas as operações da sua empresa[cite: 5].
+                            Registro completo de todas as operações da sua empresa.
                         </p>
                     </div>
                 </div>
@@ -367,7 +369,7 @@
                         </div>
                         <h3 class="text-xl font-serif font-bold text-white mb-3">Planejamento Tributário</h3>
                         <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
-                            Otimize sua carga tributária de forma legal e estratégica[cite: 5].
+                            Otimize sua carga tributária de forma legal e estratégica.
                         </p>
                     </div>
                 </div>
@@ -380,7 +382,7 @@
                         </div>
                         <h3 class="text-xl font-serif font-bold text-white mb-3">Departamento Pessoal</h3>
                         <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
-                            Gestão completa de folha de pagamento e obrigações trabalhistas[cite: 5].
+                            Gestão completa de folha de pagamento e obrigações trabalhistas.
                         </p>
                     </div>
                 </div>
@@ -393,7 +395,7 @@
                         </div>
                         <h3 class="text-xl font-serif font-bold text-white mb-3">Consultorias Corporativas</h3>
                         <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
-                            Análises e estratégias para crescimento sustentável[cite: 5].
+                            Análises e estratégias para crescimento sustentável.
                         </p>
                     </div>
                 </div>
@@ -406,7 +408,7 @@
                         </div>
                         <h3 class="text-xl font-serif font-bold text-white mb-3">Constituição / Encerramento de Empresas</h3>
                         <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
-                            Assessoria completa para constituição, legalização e/ou extinções[cite: 5].
+                            Assessoria completa para constituição, legalização e/ou extinções.
                         </p>
                     </div>
                 </div>
@@ -419,7 +421,7 @@
                         </div>
                         <h3 class="text-xl font-serif font-bold text-white mb-3">Assessoria Fiscal</h3>
                         <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
-                            Cálculo de impostos e declarações fiscais. Suporte nas esferas Federal, Estadual e Municipal[cite: 5].
+                            Cálculo de impostos e declarações fiscais. Suporte nas esferas Federal, Estadual e Municipal.
                         </p>
                     </div>
                 </div>
@@ -513,7 +515,7 @@
         </div>
     </section>
 
-    <!-- 6. Seção de Minicursos & Blog -->
+    <!-- 6. Seção de Minicursos & Blog (Conectada a videos.html e blog.html) -->
     <section id="minicursos" class="py-20 md:py-28 relative border-t border-gold/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
@@ -522,12 +524,12 @@
                     Minicursos & Informativos Fiscais
                 </h2>
                 <p class="text-slate-300 text-sm sm:text-base">
-                    Artigos práticos elaborados pela equipe técnica da Celericont.
+                    Aulas em vídeo e artigos práticos elaborados pela equipe técnica da Celericont.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Card 1 -->
+                <!-- Card 1 -> Leva para videos.html -->
                 <div class="glass-card glass-card-hover rounded-2xl overflow-hidden transition-all flex flex-col justify-between">
                     <div class="p-6">
                         <div class="inline-block px-3 py-1 rounded-full bg-gold/10 text-gold font-bold text-[10px] mb-3 uppercase tracking-wider border border-gold/30">Minicurso Express</div>
@@ -537,13 +539,13 @@
                         </p>
                     </div>
                     <div class="p-6 pt-0">
-                        <a href="videos.html" target="_blank" class="inline-flex items-center text-xs font-bold text-gold hover:text-gold-light uppercase tracking-wider">
-                            Acessar Conteúdo <i class="fa-solid fa-arrow-right ml-2"></i>
+                        <a href="videos.html" class="inline-flex items-center text-xs font-bold text-gold hover:text-gold-light uppercase tracking-wider">
+                            Assistir Aulas <i class="fa-solid fa-play ml-2"></i>
                         </a>
                     </div>
                 </div>
 
-                <!-- Card 2 -->
+                <!-- Card 2 -> Leva para blog.html#destaque-reforma -->
                 <div class="glass-card glass-card-hover rounded-2xl overflow-hidden transition-all flex flex-col justify-between">
                     <div class="p-6">
                         <div class="inline-block px-3 py-1 rounded-full bg-slate-800 text-slate-200 font-bold text-[10px] mb-3 uppercase tracking-wider border border-slate-700">Guia Especial</div>
@@ -553,24 +555,24 @@
                         </p>
                     </div>
                     <div class="p-6 pt-0">
-                        <a href="https://wa.me/5512992163772?text=Quero%20saber%20mais%20sobre%20a%20Reforma%20Tribut%C3%A1ria." target="_blank" class="inline-flex items-center text-xs font-bold text-gold hover:text-gold-light uppercase tracking-wider">
+                        <a href="blog.html#destaque-reforma" class="inline-flex items-center text-xs font-bold text-gold hover:text-gold-light uppercase tracking-wider">
                             Ler Informativo <i class="fa-solid fa-arrow-right ml-2"></i>
                         </a>
                     </div>
                 </div>
 
-                <!-- Card 3 -->
+                <!-- Card 3 -> Leva para blog.html -->
                 <div class="glass-card glass-card-hover rounded-2xl overflow-hidden transition-all flex flex-col justify-between">
                     <div class="p-6">
-                        <div class="inline-block px-3 py-1 rounded-full bg-gold/10 text-gold font-bold text-[10px] mb-3 uppercase tracking-wider border border-gold/30">Imposto de Renda</div>
+                        <div class="inline-block px-3 py-1 rounded-full bg-gold/10 text-gold font-bold text-[10px] mb-3 uppercase tracking-wider border border-gold/30">Dicas & Gestão</div>
                         <h3 class="text-lg font-serif font-bold text-white mb-2">Distribuição de Lucros Isenta vs Pró-Labore</h3>
                         <p class="text-slate-400 text-xs leading-relaxed mb-4">
                             Conheça as regras para retirar lucros da empresa sem incidência indevida de tributos federais.
                         </p>
                     </div>
                     <div class="p-6 pt-0">
-                        <a href="https://wa.me/5512992163772?text=Quero%20orienta%C3%A7%C3%A3o%20sobre%20Distribui%C3%A7%C3%A3o%20de%20Lucros." target="_blank" class="inline-flex items-center text-xs font-bold text-gold hover:text-gold-light uppercase tracking-wider">
-                            Falar com Consultor <i class="fa-solid fa-arrow-right ml-2"></i>
+                        <a href="blog.html" class="inline-flex items-center text-xs font-bold text-gold hover:text-gold-light uppercase tracking-wider">
+                            Ler Dicas no Blog <i class="fa-solid fa-arrow-right ml-2"></i>
                         </a>
                     </div>
                 </div>
